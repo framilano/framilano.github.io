@@ -1,4 +1,5 @@
 # framilano.github.io
+Site where I'll share some personal projects
 
 # Covid-19 Graphs
 Site containing various Graphs regarding covid-19 cases in Italy, source: https://github.com/pcm-dpc/COVID-19
