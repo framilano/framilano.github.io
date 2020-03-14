@@ -44,7 +44,7 @@ def main():
     plt.style.use('dark_background')
 
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
-    showgraph("Grafico tamponi totali (aggiornato al {})".format(alldays[0][0]))
+    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
 
 
 main()
