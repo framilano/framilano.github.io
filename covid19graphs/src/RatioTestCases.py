@@ -5,22 +5,21 @@ import csv
 import copy
 
 
-def addtext(list1, list2, colore):
+def addtext(list2, colore):
     i = 0
-    for x, y in zip(list1, list2):
+    for y in list2:
         plt.text(i, y, str(y), fontsize=12, color=colore)
         i += 1
 
 
 def showgraph(title):
     plt.title(title, fontsize=15)
-    plt.legend(labels=["Positivi", "Negativi"])
     plt.show()
 
 
-def aggiungitesto(giorni, listascelte, listacolori):
+def aggiungitesto(listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
-        addtext(giorni, s, c)
+        addtext(s, c)
 
 
 def main():
@@ -45,6 +44,13 @@ def main():
 
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
     showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
+
+    barseries = pd.Series(data=[totalecasiposabs, totalecasinegabs], index=["Positivi", "Negativi"])
+    barseries.plot.bar(color=["#9b0000", "#0039cb"])
+    plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']), fontsize=12, color="#9b0000", ha="center")
+    plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']), fontsize=12, color="#0039cb", ha="center")
+    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
+    return
 
 
 main()
