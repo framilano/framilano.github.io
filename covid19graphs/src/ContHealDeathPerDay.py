@@ -82,7 +82,7 @@ def main():
 
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
-    showgraph("Rapporto contagiati/guarigioni per giorno")
+    showgraph("Rapporto decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
     return
 
 
