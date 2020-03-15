@@ -10,3 +10,6 @@ Dependencies: matplotlib, numpy, pandas
 
 # Example
 ![Screenshot1](https://i.imgur.com/Pynyn4H.png)
+
+# fromCtoF Electron project
+Informations here https://github.com/framilano/fromCtoF
