@@ -9,32 +9,61 @@ tr {
     text-align: center;
 }
 
+.buttondark {
+    cursor: pointer;
+    border:solid;
+    background-color: #181818;
+    border-color:white;
+    border-radius: 20px;
+    color:white;
+    text-align:center;
+    outline: none;
+    margin-top: 1%;
+    font-size:140%;
+  }
+  
+  .buttonlight {
+    cursor: pointer;
+    border:solid;
+    background-color:white;
+    border-color:black;
+    border-radius: 20px;
+    color:black;
+    text-align:center;
+    outline: none;
+    margin-top: 1%;
+    font-size:140%;
+  }
+
 .darkbody {
+    font-family: 'Roboto', sans-serif;
     background-color: #000000;
     color:white;
 }
 
 .lightbody {
+    font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
     color:black;
 }
 
 .navigation {
+    padding: 20px;
     font-size: 200%;
     width: 33.33%;
     cursor: pointer;
 }
 
 .tablecontent {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.ontheleft {
+.onthecenter {
     border:1px;
     border-style: solid;
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 
