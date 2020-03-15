@@ -1,13 +1,40 @@
-body {
-    background-color: #000000;
-    color:white;
-}
 
 h1 {
     text-align: center;
+    text-decoration: underline;
 }
 
 tr {
     width:100%;
     text-align: center;
 }
+
+.darkbody {
+    background-color: #000000;
+    color:white;
+}
+
+.lightbody {
+    background-color: #FFFFFF;
+    color:black;
+}
+
+.navigation {
+    font-size: 200%;
+    width: 33.33%;
+    cursor: pointer;
+}
+
+.tablecontent {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ontheleft {
+    border:1px;
+    border-style: solid;
+    padding: 10px;
+    text-align: left;
+}
+
