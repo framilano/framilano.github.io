@@ -14,6 +14,7 @@ def addtext(list2, colore):
 
 def showgraph(title):
     plt.title(title, fontsize=15)
+
     plt.show()
 
 
@@ -43,6 +44,7 @@ def main():
     plt.style.use('dark_background')
 
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
+    plt.legend(labels=["Positivi", "Negativi"])
     showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
 
     barseries = pd.Series(data=[totalecasiposabs, totalecasinegabs], index=["Positivi", "Negativi"])
