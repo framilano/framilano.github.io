@@ -40,8 +40,8 @@ def addtext(list1, list2, colore):
         i += 1
 
 def showgraph(title):
-    plt.title(title, fontsize=15)
-    plt.legend()
+    plt.title(title, fontsize=20)
+    plt.legend(fontsize = 20)
     plt.show()
 
 def aggiungitesto(giorni, listascelte, listacolori):
@@ -60,7 +60,7 @@ def main():
     removehourandyear(giornocasi)
 
     # Liste di dati
-    decxday = [int(h[9]) if h[9] else 0 for h in listadati]         #Lista decessi per giorno
+    decxday = [int(h[9]) if h[9] else 0 for h in listadati]         #Lista z per giorno
     guaxday = [int(h[8]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
     contxday = [int(h[10])if h[10] else 0 for h in listadati]       #Lista contagiati per giorno
 
