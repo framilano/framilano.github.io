@@ -12,10 +12,9 @@ def addtext(list2, colore):
         i += 1
 
 
-def showgraph(title):
+def showgraph(title, fileloc):
     plt.title(title, fontsize=20)
-
-    plt.show()
+    plt.savefig(fileloc, dpi=100, bbox_inches="tight")
 
 
 def aggiungitesto(listascelte, listacolori):
@@ -42,16 +41,19 @@ def main():
 
     # Inserisco stile
     plt.style.use('dark_background')
+    plt.figure(figsize=(21, 10))
 
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
     plt.legend(labels=["Positivi", "Negativi"], fontsize=20)
-    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
+    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]), "../assets/posneglatestpie.png")
 
+    plt.style.use('dark_background')
+    plt.figure(figsize=(21, 10))
     barseries = pd.Series(data=[totalecasiposabs, totalecasinegabs], index=["Positivi", "Negativi"])
     barseries.plot.bar(color=["#9b0000", "#0039cb"])
     plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']), fontsize=12, color="#9b0000", ha="center")
     plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']), fontsize=12, color="#0039cb", ha="center")
-    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]))
+    showgraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]), "../assets/posneglatestbar.png")
     return
 
 

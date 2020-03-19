@@ -95,3 +95,11 @@ tr {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.normal {
+	filter: invert(0%);
+}
+
+.inverted {
+	filter: invert(100%);
+}

@@ -42,7 +42,7 @@ def addtext(list1, list2, colore):
 def showgraph(title):
     plt.title(title, fontsize=20)
     plt.legend(fontsize = 20)
-    plt.show()
+    plt.savefig('../assets/deathconhealperdayline.png', dpi=100, bbox_inches="tight")
 
 def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
@@ -88,6 +88,7 @@ def main():
 
     #Inserisco stile
     plt.style.use('dark_background')
+    plt.figure(figsize=(21, 10))
 
     listaseriescelte  = [deathseries, healseries, contseries]       #Lista delle serie che voglio vedere nel grafico
     listacolori = ["red", "green", "orange"]                        #Lista dei colori per ogni serie, in ordine

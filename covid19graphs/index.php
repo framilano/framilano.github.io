@@ -25,23 +25,51 @@ fclose($statsfile);
 
 <head>
     <link rel="stylesheet" href="../css/style.css" />
-    <h1>Grafici Covid-19 in Italia</h1>
+    <div style="width: 100%;text-align: right;">
+        <button class="buttondark" id="themebutton" onclick="changetheme(document.getElementById('themebutton').innerHTML)">☀️</button>
+    </div>
+    <h1 style="font-size:400%">Grafici Covid-19 in Italia</h1>
     <div style="width:100%;text-align: center;font-size: 300%;"><a href="https://github.com/pcm-dpc/COVID-19">Fonte</a></div>
 </head>
 
 <body class="darkbody">
 
-    <div class="container"><img src="assets/deathconhealperdayline.png">
-
-        <div class="text-block"><?php include "statspage.html" ?></div>
-    </div>
-
-    <div style="margin-top:12%"><img border="1px" src="assets/posneglatestpie.png"></div>
 
 
-    <div><img src="assets/posneglatestbar.png"></div>
+    <div style="margin-top:4%; text-align:center"><img class="normal" src="assets/deathconhealperdayline.png"></div>
+    <div><?php include "statspage.html" ?></div>
+
+    <div style="margin-top:12%; text-align:center"><img class="normal" border="1px" src="assets/posneglatestpie.png"></div>
+
+
+    <div><img class="normal" style="margin-top:12%; text-align:center" src="assets/posneglatestbar.png"></div>
 
     </table>
 </body>
 
 </html>
+
+<script>
+    function changetheme(icon) {
+        switch (icon) {
+            case '☀️':
+                document.getElementsByTagName('body')[0].className = 'lightbody'
+                document.getElementById('themebutton').innerHTML = '🌙'
+                document.getElementById('themebutton').className = 'buttonlight'
+                collection = document.getElementsByTagName('img')
+                for (const item of collection) {
+                    item.className = 'inverted'
+                }
+                break;
+            case '🌙':
+                document.getElementsByTagName('body')[0].className = 'darkbody'
+                document.getElementById('themebutton').innerHTML = '☀️'
+                document.getElementById('themebutton').className = 'buttondark'
+                collection = document.getElementsByTagName('img')
+                for (const item of collection) {
+                    item.className = 'normal'
+                }
+                break;
+        }
+    }
+</script>
