@@ -1,3 +1,6 @@
-deathtop:475
-healtop:1084
-contop:4207
+deathtop: 475
+healtop: 1084
+contop: 5322
+deathtot: 3405
+healtot: 4440
+contot: 41035

@@ -9,6 +9,20 @@ tr {
     text-align: center;
 }
 
+.redtr {
+    color:#9b0000;
+    text-align: left;
+}
+
+.yellowtr {
+    color:#c79100;
+    text-align: left;
+}
+
+.greentr {
+    color:#2bbd7e;
+    text-align: left;
+}
 .buttondark {
     cursor: pointer;
     border:solid;
@@ -67,3 +81,17 @@ tr {
     text-align: center;
 }
 
+.container {
+    position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+    position: absolute;
+    bottom: 260px;
+    left: 260px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}

@@ -48,17 +48,28 @@ def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
 
-def savestats(listelements, listnames):
-    statsfile = open("../assets/stats.txt","w+")
+def savetopstats(listelements, listnames, statsfile):
     for s, name in zip(listelements, listnames):
-        print(name +":"+ str(s.max()), file=statsfile)
+        print(name +": "+ str(s.max()), file=statsfile)
+    return
+
+def savetotstats(listall, listnames, statsfile):
+    lastrow = listall[-1:][0]
+    print(listnames[0] +": "+ str(lastrow[9]), file=statsfile)
+    print(listnames[1] +": "+ str(lastrow[8]), file=statsfile)
+    print(listnames[2] +": "+ str(lastrow[10]), file=statsfile)
     return
 
 def main():
+    statsfile = open("../assets/stats.txt","w+")
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
     covid_parser = csv.reader(covid_file, delimiter=",", quotechar='"')
+    
     alldays = list(covid_parser)[1:]
+    
+    #Salvo l'originale in caso possa servirmi dopo
+    cumulativedays = copy.deepcopy(alldays)
 
     # Lista giorni
     listadati = dayperday(alldays)[-days:]                  #Rimuovo la cumulazione dai dati
@@ -83,16 +94,17 @@ def main():
 
     # Grafico a linee
     deathseries.plot(alpha=1, color="red", label="Decessi", marker="o")
-    contseries.plot(alpha=1, color="orange", label="Contagiati", marker='o')
+    contseries.plot(alpha=1, color="orange", label="Contagi", marker='o')
     healseries.plot(alpha=1, color="green", label="Guarigioni", marker='o')
 
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
-    showgraph("Rapporto decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
+    showgraph("Grafico decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
 
     #Aggiungo statistiche top
-    savestats(listaseriescelte, ["deathtop", "healtop", "contop"])
-
+    statsfile = open("../assets/stats.txt","w+")
+    savetopstats(listaseriescelte, ["deathtop", "healtop", "contop"], statsfile)
+    savetotstats(cumulativedays, ["deathtot", "healtot", "contot"], statsfile)
     return
 
 
