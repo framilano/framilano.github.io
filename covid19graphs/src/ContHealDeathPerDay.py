@@ -48,6 +48,12 @@ def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
 
+def savestats(listelements, listnames):
+    statsfile = open("../assets/stats.txt","w+")
+    for s, name in zip(listelements, listnames):
+        print(name +":"+ str(s.max()), file=statsfile)
+    return
+
 def main():
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
@@ -83,6 +89,10 @@ def main():
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     showgraph("Rapporto decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
+
+    #Aggiungo statistiche top
+    savestats(listaseriescelte, ["deathtop", "healtop", "contop"])
+
     return
 
 
