@@ -35,7 +35,6 @@ def main():
     # Frequenze relative positivi e negativi
     posrel = totalecasiposabs / tamponi
     negrel = totalecasinegabs / tamponi
-    print(posrel, negrel)
     valori = [str(round(posrel * 100, 2))+"%",
               str(round(negrel * 100, 2)) + "%"]
 
