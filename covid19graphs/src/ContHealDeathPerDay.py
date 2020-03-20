@@ -6,8 +6,6 @@ import copy
 days = 0  # 0 se vuoi vedere ogni giorno dal 24 febbraio
 
 # Funzione che rimuove l'orario dalla data di prelievo dei dati
-
-
 def removehourandyear(listdays):
     for index, elem in enumerate(listdays):
         newelem = elem.split(" ")
@@ -32,27 +30,31 @@ def dayperday(listelements):
             elem[i] = int(elem[i]) - int(originalist[index-1][i])
     return listelements
 
-
+#Aggiungi valori sulle coordinate
 def addtext(list1, list2, colore):
     i = 0
     for x, y in zip(list1, list2):
         plt.text(i, y, str(y), fontsize=12, color=colore)
         i += 1
 
-def showgraph(title):
+#Funzione di salvataggio del grafico
+def savegraph(title):
     plt.title(title, fontsize=20)
     plt.legend(fontsize = 20)
     plt.savefig('../assets/deathconhealperdayline.png', dpi=100, bbox_inches="tight")
 
+#Funzione chiamante di addtext
 def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
 
+# Salva le statistiche record in un file in assets
 def savetopstats(listelements, listnames, statsfile):
     for s, name in zip(listelements, listnames):
         print(name +": "+ str(s.max()), file=statsfile)
     return
 
+# Salva le statistiche cumulative in un file in assets
 def savetotstats(listall, listnames, statsfile):
     lastrow = listall[-1:][0]
     print(listnames[0] +": "+ str(lastrow[9]), file=statsfile)
@@ -61,11 +63,14 @@ def savetotstats(listall, listnames, statsfile):
     return
 
 def main():
+
+    #Apertura file dove salvare le statistiche
     statsfile = open("../assets/stats.txt","w+")
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
     covid_parser = csv.reader(covid_file, delimiter=",", quotechar='"')
     
+    #Escludo la prima riga (cioè formato solo da descrizioni)
     alldays = list(covid_parser)[1:]
     
     #Salvo l'originale in caso possa servirmi dopo
@@ -74,6 +79,8 @@ def main():
     # Lista giorni
     listadati = dayperday(alldays)[-days:]                  #Rimuovo la cumulazione dai dati
     giornocasi = [h[0] for h in listadati]          #Creo una lista da cui ricavare i giorni interessati
+    
+    #Rimuovo l'ora e l'anno dalle date
     removehourandyear(giornocasi)
 
     # Liste di dati
@@ -90,6 +97,7 @@ def main():
     plt.style.use('dark_background')
     plt.figure(figsize=(21, 10))
 
+
     listaseriescelte  = [deathseries, healseries, contseries]       #Lista delle serie che voglio vedere nel grafico
     listacolori = ["red", "green", "orange"]                        #Lista dei colori per ogni serie, in ordine
 
@@ -100,7 +108,7 @@ def main():
 
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
-    showgraph("Grafico decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
+    savegraph("Grafico decessi/contagi/guarigioni per giorno (aggiornato al {})".format(listadati[-1][0]))
 
     #Aggiungo statistiche top
     statsfile = open("../assets/stats.txt","w+")
