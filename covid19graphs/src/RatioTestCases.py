@@ -26,17 +26,28 @@ def main():
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
     covid_parser = csv.reader(covid_file, delimiter=",", quotechar='"')
-    alldays = list(covid_parser)[-1:]
+    lasttwodays = list(covid_parser)[-2:]
+    today, yesterday = lasttwodays[1], lasttwodays[0]
 
-    tamponi = int(alldays[0][11])
-    totalecasiposabs = int(alldays[0][10])
+    tamponi = int(today[11])
+    totalecasiposabs = int(today[10])
     totalecasinegabs = tamponi - totalecasiposabs
 
-    # Frequenze relative positivi e negativi
+    #Creo aerogramma non cumulativo
+    tamponitoday = tamponi - int(yesterday[11])
+    casipositivitoday = totalecasiposabs - int(yesterday[10])
+    casinegativitoday = tamponitoday - casipositivitoday
+
+    # Frequenze relative positivi e negativi cumulativi
     posrel = totalecasiposabs / tamponi
     negrel = totalecasinegabs / tamponi
-    valori = [str(round(posrel * 100, 2))+"%",
-              str(round(negrel * 100, 2)) + "%"]
+    valori = [str(round(posrel * 100, 2))+"%", str(round(negrel * 100, 2)) + "%"]
+
+    # Frequenze relative positivi e negativi non cumulativi
+    posreltoday = casipositivitoday / tamponitoday
+    negreltoday = casinegativitoday / tamponitoday
+    valoritoday = [str(round(posreltoday * 100, 2))+"% (" + str(casipositivitoday) +")", str(round(negreltoday * 100, 2)) + "% (" + str(casinegativitoday) + ")"]
+
 
     # Inserisco stile
     plt.style.use('dark_background')
@@ -45,7 +56,7 @@ def main():
     # Sezione dedicata al grafico a torta (aerogramma)
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
     plt.legend(labels=["Positivi", "Negativi"], fontsize=20)
-    savegraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]), "../assets/posneglatestpie.png")
+    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posnegcumpie.png")
 
     # Sezione dedicata al grafico a barre
     plt.style.use('dark_background')
@@ -54,8 +65,15 @@ def main():
     barseries.plot.bar(color=["#9b0000", "#0039cb"])
     plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']),fontsize=12, color="#9b0000", ha="center")
     plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']),fontsize=12, color="#0039cb", ha="center")
-    savegraph("Risultato tamponi totali (aggiornato al {})".format(alldays[0][0]), "../assets/posneglatestbar.png")
-    return
+    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posneglatestbar.png")
 
+    # Sezione dedicata al grafico a torta (aerogramma) del non cumulativo
+    plt.style.use('dark_background')
+    plt.figure(figsize=(21, 10))
+    plt.pie(x=[posreltoday, negreltoday], labels=valoritoday, colors=["#9b0000", "#0039cb"])
+    plt.legend(labels=["Positivi", "Negativi"], fontsize=20)
+    savegraph("Risultato tamponi del {})".format(today[0]), "../assets/posnegtodaypie.png")
+    
+    return
 
 main()
