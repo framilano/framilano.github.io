@@ -65,7 +65,7 @@ def main():
     barseries.plot.bar(color=["#9b0000", "#0039cb"])
     plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']),fontsize=12, color="#9b0000", ha="center")
     plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']),fontsize=12, color="#0039cb", ha="center")
-    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posneglatestbar.png")
+    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posnegcumbar.png")
 
     # Sezione dedicata al grafico a torta (aerogramma) del non cumulativo
     plt.style.use('dark_background')
