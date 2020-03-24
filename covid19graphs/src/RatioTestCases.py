@@ -30,12 +30,12 @@ def main():
     today, yesterday = lasttwodays[1], lasttwodays[0]
 
     tamponi = int(today[11])
-    totalecasiposabs = int(today[7])
+    totalecasiposabs = int(today[10])
     totalecasinegabs = tamponi - totalecasiposabs
 
     #Creo aerogramma non cumulativo
     tamponitoday = tamponi - int(yesterday[11])
-    casipositivitoday = totalecasiposabs - int(yesterday[10])
+    casipositivitoday = int(today[7])
     casinegativitoday = tamponitoday - casipositivitoday
 
     # Frequenze relative positivi e negativi cumulativi
