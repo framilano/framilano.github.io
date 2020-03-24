@@ -77,7 +77,7 @@ def main():
     cumulativedays = copy.deepcopy(alldays)
 
     # Lista giorni
-    listadati = dayperday(alldays)[-days:]                  #Rimuovo la cumulazione dai dati
+    listadati = dayperday(alldays)[-days:]             #Rimuovo la cumulazione dai dati
     giornocasi = [h[0] for h in listadati]          #Creo una lista da cui ricavare i giorni interessati
     
     #Rimuovo l'ora e l'anno dalle date
@@ -86,7 +86,7 @@ def main():
     # Liste di dati
     decxday = [int(h[9]) if h[9] else 0 for h in listadati]         #Lista z per giorno
     guaxday = [int(h[8]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
-    contxday = [int(h[10])if h[10] else 0 for h in listadati]       #Lista contagiati per giorno
+    contxday = [int(h[7])if h[7] else 0 for h in cumulativedays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
 
     # Creazioni Serie
     deathseries = pd.Series(data=decxday, index=giornocasi)

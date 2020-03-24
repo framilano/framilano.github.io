@@ -30,7 +30,7 @@ def main():
     today, yesterday = lasttwodays[1], lasttwodays[0]
 
     tamponi = int(today[11])
-    totalecasiposabs = int(today[10])
+    totalecasiposabs = int(today[7])
     totalecasinegabs = tamponi - totalecasiposabs
 
     #Creo aerogramma non cumulativo
