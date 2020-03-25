@@ -48,6 +48,9 @@ def main():
     negreltoday = casinegativitoday / tamponitoday
     valoritoday = [str(round(posreltoday * 100, 2))+"% (" + str(casipositivitoday) +")", str(round(negreltoday * 100, 2)) + "% (" + str(casinegativitoday) + ")"]
 
+    # Parsing nella data e dell'ora di oggi
+    datatoday = today[0].split("T")[0]
+    oratoday = today[0].split("T")[1]
 
     # Inserisco stile
     plt.style.use('dark_background')
@@ -56,7 +59,7 @@ def main():
     # Sezione dedicata al grafico a torta (aerogramma)
     plt.pie(x=[posrel, negrel], labels=valori, colors=["#9b0000", "#0039cb"])
     plt.legend(labels=["Positivi", "Negativi"], fontsize=20)
-    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posnegcumpie.png")
+    savegraph("Risultato tamponi totali (aggiornato al {})".format(datatoday + " " + oratoday), "../assets/posnegcumpie.png")
 
     # Sezione dedicata al grafico a barre
     plt.style.use('dark_background')
@@ -65,14 +68,14 @@ def main():
     barseries.plot.bar(color=["#9b0000", "#0039cb"])
     plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']),fontsize=12, color="#9b0000", ha="center")
     plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']),fontsize=12, color="#0039cb", ha="center")
-    savegraph("Risultato tamponi totali (aggiornato al {})".format(today[0]), "../assets/posnegcumbar.png")
+    savegraph("Risultato tamponi totali (aggiornato al {})".format(datatoday + " " + oratoday), "../assets/posnegcumbar.png")
 
     # Sezione dedicata al grafico a torta (aerogramma) del non cumulativo
     plt.style.use('dark_background')
     plt.figure(figsize=(21, 10))
     plt.pie(x=[posreltoday, negreltoday], labels=valoritoday, colors=["#9b0000", "#0039cb"])
     plt.legend(labels=["Positivi", "Negativi"], fontsize=20)
-    savegraph("Risultato tamponi del {})".format(today[0]), "../assets/posnegtodaypie.png")
+    savegraph("Risultato tamponi del {})".format(datatoday + " " + oratoday), "../assets/posnegtodaypie.png")
     
     return
 
