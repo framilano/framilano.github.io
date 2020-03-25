@@ -57,9 +57,9 @@ def savetopstats(listelements, listnames, statsfile):
 # Salva le statistiche cumulative in un file in assets
 def savetotstats(listall, listnames, statsfile):
     lastrow = listall[-1:][0]
-    print(listnames[0] +": "+ str(lastrow[8]), file=statsfile)
-    print(listnames[1] +": "+ str(lastrow[7]), file=statsfile)
-    print(listnames[2] +": "+ str(lastrow[9]), file=statsfile)
+    print(listnames[0] +": "+ str(lastrow[9]), file=statsfile)
+    print(listnames[1] +": "+ str(lastrow[8]), file=statsfile)
+    print(listnames[2] +": "+ str(lastrow[10]), file=statsfile)
     return
 
 def main():
@@ -84,9 +84,9 @@ def main():
     removehourandyear(giornocasi)
 
     # Liste di dati    
-    decxday = [int(h[8]) if h[8] else 0 for h in listadati]         #Lista z per giorno
-    guaxday = [int(h[7]) if h[7] else 0 for h in listadati]         #Lista guarigioni per giorno
-    contxday = [int(h[6])if h[6] else 0 for h in cumulativedays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
+    decxday = [int(h[9]) if h[9] else 0 for h in listadati]         #Lista z per giorno
+    guaxday = [int(h[8]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
+    contxday = [int(h[7])if h[7] else 0 for h in cumulativedays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
 
     # Creazioni Serie
     deathseries = pd.Series(data=decxday, index=giornocasi)

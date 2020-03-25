@@ -1,6 +1,6 @@
-deathtop: 1084
-healtop: 1832
-contop: 57521
-deathtot: 9362
-healtot: 3491
-contot: 7503
+deathtop: 793
+healtop: 1084
+contop: 4821
+deathtot: 7503
+healtot: 9362
+contot: 74386
