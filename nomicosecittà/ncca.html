@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="scripts/randomletter.js"></script>
+    <h2>NomiCoseCittàAnimali</h2>
+</head>
+
+<body>
+    <div>Clicca qui sotto per generare una lettera casuale</div>
+    <div><button onclick="ranlet()">🎲</button></div>
+    <div>
+        <table id="gametable">
+            <tr>
+                <th>Nomi</th>
+                <th>Cose</th>
+                <th>Città</th>
+                <th>Animali</th>
+                <th colspan=2>Punteggio</th>
+            </tr>
+        </table>
+    </div>
+    <div id ="total"></div>
+    <div><button onclick="appendRow()">Clicca qui per generare una nuova riga</button></div>
+
+</body>
+
+
+</html>
