@@ -25,7 +25,7 @@ def dayperday(listelements):
         if index == 0:
             continue
         for i, e in enumerate(elem):
-            if i == 0 or i == 1 or e == "":
+            if i == 0 or i == 1 or e.isdigit() == False:
                 continue
             elem[i] = int(elem[i]) - int(originalist[index-1][i])
     return listelements
