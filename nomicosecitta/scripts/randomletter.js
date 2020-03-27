@@ -17,7 +17,7 @@ function updatetotal() {
 
 function setvolume() {
     var audio = document.getElementById("backgroundmusic");
-    audio.volume = 0.2;
+    audio.volume = 0.1;
 }
 
 
