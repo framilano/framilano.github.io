@@ -4,25 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <script src="scripts/randomletter.js"></script>
+    
     <h1 style="color:#c7a500">Nomi, cose e citta'</h1>
     <h1 style="margin-top: -45px;color:#0039cb">NIGHTS</h1>
 </head>
 
-<body>
-    <div><button onclick="showtable();appendRow()">Clicca qui per generare una nuova riga</button></div>
+<body id="background">
+    <div><button onclick="document.getElementById('gametable').hidden=0;appendRow()">Clicca qui per generare una nuova riga</button></div>
     <div>
         <table hidden=1 id="gametable">
-            <tr>
-                <th id="nomi">Nomi 👨👩</th>
-                <th id="cose">Cose 🔍</th>
-                <th id="città">Citta' 🏙️</th>
-                <th id="animali">Animali 🐻</th>
-                <th id="cibo">Cibo 🍔</th>
-                <th id="vip">Vip 🎥</th>
-                <th id="mestieri">Mestieri 👔</th>
-                <th id="punteggio"><u>Punteggio</u> 📈</th>
-            </tr>
         </table>
     </div>
     <div id="total">👑 Punteggio totale: 0.0 👑</div>
@@ -37,3 +27,5 @@
 
 
 </html>
+
+<script src="scripts/randomletter.js"></script>
