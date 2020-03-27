@@ -1,8 +1,10 @@
-function ranlet() {
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var x = Math.ceil((Math.random() * 1000) % 25)
 
-    alert ("La lettera trovata è " +characters[x]);
+var characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+function ranlet() {
+    var x = parseInt((Math.random() * 100) % characters.length)
+    if (characters.length > 0) alert("Ho trovato una " + characters[x]);
+    else alert("Sono finite le lettere, GG");
+    characters.splice(x,1)
 }
 
 function updatetotal() {
@@ -15,30 +17,44 @@ function updatetotal() {
     document.getElementById('total').innerHTML = "Punteggio totale " + total;
 }
 
+function showvalue(newelement, newvalue) {
+    if (newvalue <= 2) newelement.innerHTML = newvalue + " " +'😭'
+    else newelement.innerHTML = newvalue + " " + '🤓'
+    if (newvalue == 4) newelement.innerHTML = newvalue + " " +'💥'
+}
+
+var counter = 0
 
 function appendRow() {
+    counter++;
     const newRow = document.createElement('tr')
     let td, input;
-    
-    for(let i=0; i<4; i++){
-      td = document.createElement('td')
-      input = document.createElement('input')
-      input.setAttribute('type','text')
-      td.appendChild(input)
-      newRow.appendChild(td)
+
+    for (let i = 0; i < 4; i++) {
+        td = document.createElement('td')
+        input = document.createElement('input')
+        input.setAttribute('type', 'text')
+        input.setAttribute('placeholder', 'Inserisci qui le tue risposte')
+        td.appendChild(input)
+        newRow.appendChild(td)
     }
-    
-    
+
+
     td = document.createElement('td')
     input = document.createElement('input')
-    input.setAttribute('type','range')
-    input.setAttribute('min',0)
-    input.setAttribute('max',4)
-    input.setAttribute('step',0.5)
+    input.setAttribute('type', 'range')
+    input.setAttribute('min', 0)
+    input.setAttribute('max', 4)
+    input.setAttribute('step', 0.5)
     input.setAttribute('name', 'point')
-    input.setAttribute('onchange', 'updatetotal()')
+    input.setAttribute('onchange', 'updatetotal();showvalue(document.getElementById(\'' + counter + '\'),this.value)')
+    input.defaultValue = 0
     td.appendChild(input)
     newRow.appendChild(td)
-    
+
+    td = document.createElement('td')
+    td.setAttribute('id', counter)
+    newRow.appendChild(td)
+
     document.getElementById('gametable').appendChild(newRow);
 }

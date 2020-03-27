@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Natural Toons';
     background-color: #181818;
     color:#FFFFFF;
     text-align: center;
@@ -10,11 +10,98 @@ div {
 }
 
 table {
-    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    width: auto;
     margin-right: auto;
     margin-left: auto;
+    border:3px solid;
+    background-color: #212121;
+    border-color: #38006b;
 }
 
 th {
+    font-size: 150%;
     text-align: center;
+}
+
+td {
+    font-size: 120%;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Natural Toons';
+    font-size: 300%;
+}
+
+button {
+    font-family: 'Natural Toons';
+    cursor: pointer;
+    padding: 10px;
+    background-color: #212121;
+    font-size: 150%;
+    border-radius: 20px;
+    color:#7200ca;
+    border-color: #38006b;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+  
+  
+
+input {
+    text-align: center;
+    font-size: 120%;
+    margin-top: 5%;
+    border:2px solid;
+    border-radius: 20px;
+    background-color: #181818;
+    color:white;
+    border-color: #38006b;
+}
+
+#total {
+    font-style: bold;
+    font-size: 200%;
+    color: #D4AF37;
+}
+
+#nomi {
+    color: #bb002f;
+    text-decoration: underline;
+}
+
+#cose {
+ color:#c43c00;
+ text-decoration: underline;
+}
+
+#città {
+    color:#255d00;
+    text-decoration: underline;
+}
+
+#animali {
+    color:#0039cb;
+    text-decoration: underline;
+}
+
+#punteggio {
+    color:#9b0000;
+    text-decoration: underline;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#die {
+    border: none;
+    background-color: #181818;
+    font-size: 250%;
 }
