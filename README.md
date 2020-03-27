@@ -13,3 +13,10 @@ Dependencies: matplotlib, numpy, pandas
 
 # fromCtoF Electron project
 Informations here https://github.com/framilano/fromCtoF
+
+# NomiCoseCittà
+Conversione digitale del gioco da tavolo Nomi. cose e città
+
+![Screenshot2](https://i.imgur.com/vWsKFVY.png)
+
+
