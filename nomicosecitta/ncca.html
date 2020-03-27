@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div><button onclick="showtable();appendRow()">Clicca qui per generare una nuova riga</button></div>
     <div>
         <table hidden=1 id="gametable">
             <tr>
@@ -24,8 +25,7 @@
             </tr>
         </table>
     </div>
-    <div id="total"></div>
-    <div><button onclick="showtable();appendRow()">Clicca qui per generare una nuova riga</button></div>
+    <div id="total">👑 Punteggio totale: 0.0 👑</div>
     <div>Clicca sul dado per ottenere una lettera casuale</div>
     <div id="die" onclick="ranlet()"><img height=50 width=50 src="images/dice.png"></div>
 

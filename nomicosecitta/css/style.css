@@ -57,7 +57,7 @@ button::-moz-focus-inner {
 
 button:active {
     outline:none;
-    background-color: #000000;
+    background-color: #181818;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
@@ -86,9 +86,10 @@ input {
 }
 
 .bottom {
-    width: 100%;
+    width: 99%;
     position: fixed;
     bottom: 0;
+    text-align: right;
 }
 
 #total {
