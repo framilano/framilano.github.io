@@ -1,15 +1,12 @@
-@font-face
-{
+@font-face {
     font-family: 'Natural Toons';
-    src: url('../fonts/Natural\ Toons.otf'),
-    url('../fonts/Natural\ Toons.ttf') format('truetype');
+    src: url('../fonts/Natural\ Toons.otf'), url('../fonts/Natural\ Toons.ttf') format('truetype');
 }
 
 body {
     background-image: url('../images/moon.png');
     font-family: 'Natural Toons';
-    background-color: #181818;
-    color:#FFFFFF;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -20,12 +17,11 @@ div {
 table {
     padding: 5px;
     border-radius: 20px;
-    width: 90%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border:transparent;
+    border: transparent;
     background-color: #212121;
-
 }
 
 th {
@@ -49,27 +45,41 @@ button {
     background-color: #212121;
     font-size: 120%;
     border-radius: 20px;
-    color:#c7a500;
+    color: #c7a500;
     border: transparent;
 }
 
 button::-moz-focus-inner {
     border: 0;
 }
-  
-  
 
 input {
     padding: 7px;
-    width:85%;
+    width: 85%;
     font-family: 'Natural Toons';
     text-align: center;
     font-size: 120%;
     margin-top: 5%;
-    border:transparent;
+    border: transparent;
     border-radius: 20px;
     background-color: #181818;
-    color:white;
+    color: white;
+}
+
+.link {
+    font-family: 'Natural Toons';
+    padding: 10px;
+    background-color: #212121;
+    font-size: 100%;
+    border-radius: 20px;
+    color: #7200ca;
+    border-color: #38006b;
+}
+
+.bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 #total {
@@ -80,26 +90,34 @@ input {
 
 #nomi {
     color: #bb002f;
-
 }
 
 #cose {
- color:#c43c00;
-
+    color: #c43c00;
 }
 
 #città {
-    color:#255d00;
-
+    color: #255d00;
 }
 
 #animali {
-    color:#0039cb;
+    color: #0039cb;
+}
 
+#cibo {
+    color:#5f4339;
+}
+
+#vip {
+    color:#790e8b;
+}
+
+#mestieri {
+    color:#c68400;
 }
 
 #punteggio {
-    color:#9b0000;
+    color: #9b0000;
 }
 
 #die {
@@ -108,14 +126,4 @@ input {
     cursor: pointer;
     border: none;
     font-size: 200%;
-}
-
-.link {
-    font-family: 'Natural Toons';
-    padding: 10px;
-    background-color: #212121;
-    font-size: 100%;
-    border-radius: 20px;
-    color:#7200ca;
-    border-color: #38006b;
 }
