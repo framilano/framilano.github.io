@@ -5,27 +5,28 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/randomletter.js"></script>
-    <h1>Nomi, cose e citta'</h1>
+    <h1 style="color:#c7a500">Nomi, cose e citta'</h1>
     <h1 style="margin-top: -45px;color:#0039cb">NIGHTS</h1>
 </head>
 
 <body>
     <div>
-        <table id="gametable">
+        <table hidden=1 id="gametable">
             <tr>
-                <th id="nomi">Nomi</th>
-                <th id="cose">Cose</th>
-                <th id="città">Citta'</th>
-                <th id="animali">Animali</th>
-                <th id="punteggio" colspan=2>Punteggio</th>
+                <th id="nomi">Nomi 👨👩</th>
+                <th id="cose">Cose 🔍</th>
+                <th id="città">Citta' 🏙️</th>
+                <th id="animali">Animali 🐻</th>
+                <th id="punteggio" colspan=2><u>Punteggio</u> 📈</th>
             </tr>
         </table>
     </div>
     <div id="total"></div>
-    <div><button onclick="appendRow()">Clicca qui per generare una nuova riga</button></div>
-    <div><button id="die" onclick="ranlet()">🎲</button></div>
-    <div style="margin-top: 2%;"><u>Clicca sul dado per ottenere una lettera casuale</u></div>
+    <div><button onclick="showtable();appendRow()">Clicca qui per generare una nuova riga</button></div>
+    <div>Clicca sul dado per ottenere una lettera casuale</div>
+    <div id="die" onclick="ranlet()">🎲</div>
     <div>Creato da Francesco Milano - "Natural Toons" font by Darrell Flood</div>
+    <div>Background wallpaper from <a class="link" href="https://www.wallpaperflare.com/">WallpaperFrame</a></div>
 </body>
 
 

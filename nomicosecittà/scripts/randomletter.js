@@ -17,6 +17,11 @@ function updatetotal() {
     document.getElementById('total').innerHTML = "Punteggio totale: " + total;
 }
 
+function showtable() {
+   document.getElementById('gametable').hidden=0
+    
+}
+
 function showvalue(newelement, newvalue) {
     if (newvalue <= 2) newelement.innerHTML = newvalue + " " +'😭'
     else newelement.innerHTML = newvalue + " " + '🤓'
@@ -54,6 +59,7 @@ function appendRow() {
 
     td = document.createElement('td')
     td.setAttribute('id', counter)
+    td.innerHTML = '0.0'
     newRow.appendChild(td)
 
     document.getElementById('gametable').appendChild(newRow);

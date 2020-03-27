@@ -6,6 +6,7 @@
 }
 
 body {
+    background-image: url('../images/moon.png');
     font-family: 'Natural Toons';
     background-color: #181818;
     color:#FFFFFF;
@@ -13,13 +14,13 @@ body {
 }
 
 div {
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 table {
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     border:3px solid;
@@ -28,7 +29,7 @@ table {
 }
 
 th {
-    font-size: 150%;
+    font-size: 250%;
     text-align: center;
 }
 
@@ -59,10 +60,11 @@ button::-moz-focus-inner {
   
 
 input {
+    padding: 7px;
+    width:85%;
     font-family: 'Natural Toons';
-    width: 80%;
     text-align: center;
-    font-size: 100%;
+    font-size: 120%;
     margin-top: 5%;
     border:2px solid;
     border-radius: 20px;
@@ -79,32 +81,42 @@ input {
 
 #nomi {
     color: #bb002f;
-    text-decoration: underline;
+
 }
 
 #cose {
  color:#c43c00;
- text-decoration: underline;
+
 }
 
 #città {
     color:#255d00;
-    text-decoration: underline;
+
 }
 
 #animali {
     color:#0039cb;
-    text-decoration: underline;
+
 }
 
 #punteggio {
     color:#9b0000;
-    text-decoration: underline;
 }
 
 #die {
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
     border: none;
-    background-color: #181818;
     font-size: 250%;
 }
 
+.link {
+    font-family: 'Natural Toons';
+    padding: 10px;
+    background-color: #212121;
+    font-size: 100%;
+    border-radius: 20px;
+    color:#7200ca;
+    border-color: #38006b;
+}
