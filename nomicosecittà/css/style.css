@@ -66,11 +66,10 @@ input {
     text-align: center;
     font-size: 120%;
     margin-top: 5%;
-    border:2px solid;
+    border:transparent;
     border-radius: 20px;
     background-color: #181818;
     color:white;
-    border-color: #38006b;
 }
 
 #total {
