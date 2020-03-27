@@ -75,6 +75,24 @@ input {
     color: white;
 }
 
+input[type=range]::-moz-range-track {
+    width: 100%;
+    background:#000000;
+    border-radius: 30%;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #9b0000;
+}
+
+input[type=range] {
+    background: transparent;
+}
+
 .link {
     font-family: 'Natural Toons';
     padding: 10px;

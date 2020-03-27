@@ -57,6 +57,7 @@ function appendRow() {
     //div è dedicato al punteggio live ottenuto sotto un input type range
     div = document.createElement('div')
     div.setAttribute('id', counter)
+    div.setAttribute('style', 'font-size:150%;color:#9b0000')
     div.innerHTML = 0.0
     td.appendChild(div)
     newRow.appendChild(td)
