@@ -12,7 +12,7 @@ div {
 table {
     padding: 10px;
     border-radius: 20px;
-    width: auto;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     border:3px solid;
@@ -32,7 +32,7 @@ td {
 
 h1 {
     font-family: 'Natural Toons';
-    font-size: 300%;
+    font-size: 500%;
 }
 
 button {
@@ -53,8 +53,10 @@ button::-moz-focus-inner {
   
 
 input {
+    width: 80%;
+    font-family: 'Natural Toons';
     text-align: center;
-    font-size: 120%;
+    font-size: 100%;
     margin-top: 5%;
     border:2px solid;
     border-radius: 20px;
@@ -92,12 +94,6 @@ input {
 #punteggio {
     color:#9b0000;
     text-decoration: underline;
-}
-
-.bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 #die {

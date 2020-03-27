@@ -14,7 +14,7 @@ function updatetotal() {
         total += parseFloat(element.value);
     });
 
-    document.getElementById('total').innerHTML = "Punteggio totale " + total;
+    document.getElementById('total').innerHTML = "Punteggio totale: " + total;
 }
 
 function showvalue(newelement, newvalue) {
@@ -34,7 +34,7 @@ function appendRow() {
         td = document.createElement('td')
         input = document.createElement('input')
         input.setAttribute('type', 'text')
-        input.setAttribute('placeholder', 'Inserisci qui le tue risposte')
+        input.setAttribute('placeholder', 'Scrivi qui')
         td.appendChild(input)
         newRow.appendChild(td)
     }
