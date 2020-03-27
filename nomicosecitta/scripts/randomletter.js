@@ -17,6 +17,11 @@ function updatetotal() {
     document.getElementById('total').innerHTML = "👑 Punteggio totale: " + total + " 👑";
 }
 
+function setvolume() {
+    var audio = document.getElementById("backgroundmusic");
+    audio.volume = 0.1;
+}
+
 function showtable() {
    document.getElementById('gametable').hidden=0
     
