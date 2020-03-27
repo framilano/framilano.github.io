@@ -23,9 +23,7 @@ function showtable() {
 }
 
 function showvalue(newelement, newvalue) {
-    if (newvalue <= 2) newelement.innerHTML = newvalue + " " +'😭'
-    else newelement.innerHTML = newvalue + " " + '🤓'
-    if (newvalue == 4) newelement.innerHTML = newvalue + " " +'💥'
+    newelement.innerHTML = newvalue
 }
 
 var counter = 0

@@ -20,21 +20,21 @@ div {
 table {
     padding: 5px;
     border-radius: 20px;
-    width: 100%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
-    border:3px solid;
+    border:transparent;
     background-color: #212121;
-    border-color: #38006b;
+
 }
 
 th {
-    font-size: 250%;
+    font-size: 180%;
     text-align: center;
 }
 
 td {
-    font-size: 120%;
+    font-size: 100%;
     text-align: center;
 }
 
@@ -47,10 +47,10 @@ button {
     cursor: pointer;
     padding: 10px;
     background-color: #212121;
-    font-size: 150%;
+    font-size: 120%;
     border-radius: 20px;
-    color:#7200ca;
-    border-color: #38006b;
+    color:#c7a500;
+    border: transparent;
 }
 
 button::-moz-focus-inner {
@@ -107,7 +107,7 @@ input {
     width: auto;
     cursor: pointer;
     border: none;
-    font-size: 250%;
+    font-size: 200%;
 }
 
 .link {
