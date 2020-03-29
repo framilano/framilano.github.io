@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import csv
 import copy
-days = 0  # 0 se vuoi vedere ogni giorno dal 24 febbraio
+days = 15  # 0 se vuoi vedere ogni giorno dal 24 febbraio
 
 # Funzione che rimuove l'orario dalla data di prelievo dei dati
 def removehourandyear(listdays):
@@ -74,12 +74,11 @@ def main():
     alldays = list(covid_parser)[1:]
     
     #Salvo l'originale in caso possa servirmi dopo
-    cumulativedays = copy.deepcopy(alldays)
+    cumulativedays = copy.deepcopy(alldays)[-days:]
 
     # Lista giorni
     listadati = dayperday(alldays)[-days:]             #Rimuovo la cumulazione dai dati
-    giornocasi = [h[0] for h in listadati]          #Creo una lista da cui ricavare i giorni interessati
-    
+    giornocasi = [h[0] for h in listadati][-days:]          #Creo una lista da cui ricavare i giorni interessati
     #Rimuovo l'ora e l'anno dalle date
     removehourandyear(giornocasi)
 
