@@ -4,10 +4,10 @@
 }
 
 body {
-    background-image: url('../images/moon.png');
     font-family: 'Natural Toons';
     color: #FFFFFF;
     text-align: center;
+    background-color: #000000;
 }
 
 div {
@@ -39,6 +39,7 @@ h1 {
 }
 
 button {
+    outline:none;
     font-family: 'Natural Toons';
     cursor: pointer;
     padding: 10px;
@@ -50,8 +51,16 @@ button {
 }
 
 button::-moz-focus-inner {
+    outline:none;
     border: 0;
 }
+
+button:active {
+    outline:none;
+    background-color: #181818;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 input {
     padding: 7px;
@@ -66,6 +75,24 @@ input {
     color: white;
 }
 
+input[type=range]::-moz-range-track {
+    width: 100%;
+    background:#000000;
+    border-radius: 30%;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #9b0000;
+}
+
+input[type=range] {
+    background: transparent;
+}
+
 .link {
     font-family: 'Natural Toons';
     padding: 10px;
@@ -77,9 +104,10 @@ input {
 }
 
 .bottom {
-    width: 100%;
+    width: 99%;
     position: fixed;
     bottom: 0;
+    text-align: right;
 }
 
 #total {
