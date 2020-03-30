@@ -1,7 +1,14 @@
+//Variabili globali di dimensione dei dati e velocità
 var datasize = 0
 var dwlspeed = 0
 
+/*
+* Gestisce l'input della dimensione dei dati e aggiorna la variabile globale datasize
+* @params : none
+* @returns: none
+*/
 function go2dwlspeed() {
+    var inputdim = document.getElementById('datadim').value
     var chosen = null
     radios = document.getElementsByName('chooser')
     radios.forEach(element => {
@@ -14,26 +21,32 @@ function go2dwlspeed() {
     
     switch (chosen.id) {
         case 'kb':
-            datasize = parseInt(document.getElementById('datadim').value) / 1000
+            datasize = document.getElementById('datadim').value / 1000
         break;
         case 'mb':
-            datasize = parseInt(document.getElementById('datadim').value)
+            datasize = document.getElementById('datadim').value
         break;
         case 'gb':
-            datasize = parseInt(document.getElementById('datadim').value) * 1000
+            datasize = document.getElementById('datadim').value * 1000
         break;
     }
-    if (document.getElementById('datadim').value.length == 0) datasize = 0
+    if (inputdim.length == 0) datasize = 0
+    if (parseInt(inputdim) < 0) {
+        alert("You cannot insert negative values")
+        return
+    } 
+        
     document.getElementById('choosedimension').hidden = 1
     document.getElementById('choosedwlspeed').hidden = 0
 }
 
 /*
 * Calculate hours, minutes and seconds to download a file
-* params : none
-* returns: none
+* @params : none
+* @returns: none
 */
 function final() {
+    var inputspeed = document.getElementById('dataspeed').value
     var chosen = null
     radios = document.getElementsByName('speedchooser')
     radios.forEach(element => {
@@ -46,35 +59,52 @@ function final() {
     
     switch (chosen.id) {
         case 'kbit/s':
-            dwlspeed = parseInt(document.getElementById('dataspeed').value) / 1000
+            dwlspeed = document.getElementById('dataspeed').value / 1000
         break;
         case 'mbit/s':
-            dwlspeed = parseInt(document.getElementById('dataspeed').value)
-            
+            dwlspeed = document.getElementById('dataspeed').value
         break;
         case 'gbit/s':
-            dwlspeed = parseInt(document.getElementById('dataspeed').value) * 1000
+            dwlspeed = document.getElementById('dataspeed').value * 1000
         break;
     }
+    // gestisco il caso di input velocità pari a 0 o nullo
+    if (inputspeed.length == 0 || Math.round(inputspeed) == 0) {
+        document.getElementById('choosedwlspeed').hidden = 1
+        document.getElementById('result').hidden = 0
+        document.getElementById('answer').innerHTML = " a long time with such a download speed D:"
+        return
+    }
 
-    if (document.getElementById('dataspeed').value.length == 0) dwlspeed = 0
+    //Gestisco e mi riprendo dal caso di input velocità negativo
+    if (Math.round(inputspeed) < 0) {
+        alert("You cannot insert negative values")
+        return
+    }
+
+    //Eseguo conversione della velocità da megabit/s a megabyte/s
     inmb = dwlspeed*0.125
-    totalseconds = parseInt(datasize / inmb)
-    days = parseInt(totalseconds / 86400)
-    hours = parseInt((totalseconds - days*86400) / 3600)
-    minutes = parseInt((totalseconds - days*86400 - hours*3600) / 60)
-    seconds = parseInt(totalseconds - days*86400 - hours*3600 - minutes*60)
-    if (datasize == 0 || dwlspeed == 0) {
+    totalseconds = Math.round(datasize / inmb)
+    days = Math.round(totalseconds / 86400)
+    hours = Math.round((totalseconds - days*86400) / 3600)
+    minutes = Math.round((totalseconds - days*86400 - hours*3600) / 60)
+    seconds = Math.round(totalseconds - days*86400 - hours*3600 - minutes*60)
+
+    //Gestisco il caso di dimensione dei dati nulla
+    if (datasize == 0) {
         days = 0
         hours = 0
         minutes = 0
         seconds = 0
     }
+
+    //Mostro l'ultima pagina con la stringa risultante
     document.getElementById('choosedwlspeed').hidden = 1
     document.getElementById('result').hidden = 0
     document.getElementById('answer').innerHTML = days + " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds "
 }
 
+//Bottone che torna alla pagina iniziale
 function backtomenu() {
     document.getElementById('choosedimension').hidden = 0
     document.getElementById('choosedwlspeed').hidden = 1

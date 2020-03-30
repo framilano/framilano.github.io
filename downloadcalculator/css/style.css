@@ -72,6 +72,10 @@ button:hover {
     background-color: #494949;
 }
 
+form {
+    display: inline;
+}
+
 .bottom {
     width: 100%;
     position: fixed;
