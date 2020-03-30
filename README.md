@@ -20,4 +20,9 @@ https://framilano.github.io/nomicosecitta/ncca.html
 
 ![Screenshot2](https://i.imgur.com/vWsKFVY.png)
 
+# Download time calculator
+A download time calculator completely written in JS, CSS and HTML
+
+![Screenshot3](https://i.imgur.com/whuiHDJ.png)
+
 
