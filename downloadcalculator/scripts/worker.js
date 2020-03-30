@@ -84,12 +84,11 @@ function final() {
 
     //Eseguo conversione della velocità da megabit/s a megabyte/s
     inmb = dwlspeed*0.125
-    totalseconds = Math.round(datasize / inmb)
-    days = Math.round(totalseconds / 86400)
-    hours = Math.round((totalseconds - days*86400) / 3600)
-    minutes = Math.round((totalseconds - days*86400 - hours*3600) / 60)
-    seconds = Math.round(totalseconds - days*86400 - hours*3600 - minutes*60)
-
+    totalseconds = Math.floor(datasize / inmb)
+    days = Math.floor(totalseconds / 86400)
+    hours = Math.floor((totalseconds - days*86400) / 3600)
+    minutes = Math.floor((totalseconds - days*86400 - hours*3600) / 60)
+    seconds = Math.floor(totalseconds - days*86400 - hours*3600 - minutes*60)
     //Gestisco il caso di dimensione dei dati nulla
     if (datasize == 0) {
         days = 0
