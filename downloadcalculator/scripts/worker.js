@@ -55,9 +55,10 @@ function final() {
     }
     inmb = dwlspeed*0.125
     totalseconds = parseInt(datasize / inmb)
-    hours = parseInt(totalseconds / 3600)
-    minutes = parseInt((totalseconds - hours*3600) / 60)
-    seconds = parseInt(totalseconds - hours*3600 - minutes*60)
+    days = parseInt(totalseconds / 86400)
+    hours = parseInt((totalseconds - days*86400) / 3600)
+    minutes = parseInt((totalseconds - days*86400 - hours*3600) / 60)
+    seconds = parseInt(totalseconds - days*86400 - hours*3600 - minutes*60)
     document.getElementById('choosedwlspeed').hidden = 1
     document.getElementById('result').hidden = 0
     document.getElementById('answer').innerHTML = hours + " hours " + minutes + " minutes and " + seconds + " seconds "
