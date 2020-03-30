@@ -21,17 +21,16 @@ body {
 }
 
 input[type=number] {
-    margin-left: 2%;
+    margin-left: 1%;
     width: 4%;
     text-align: center;
     font-size: 170%;
-    font-weight: lighter;
     background-color: transparent;
-    border-style: solid;
-    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: grey;
     outline: none;
     color: grey;
-    border-color: grey;
     -moz-appearance: textfield;
 }
 
@@ -43,14 +42,14 @@ input::-webkit-inner-spin-button {
 
 button {
     background-color: transparent;
-    color:grey;
+    color:black;
     font-size: 150%;
     font-weight: lighter;
-    margin-top: 2%;
+    margin-top: 1%;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 1px solid black;
     outline: none;
 }
 
