@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="scripts/worker.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+        <div id="title">Download time calculator</div>
+    </head>
+
+    <body>
+        <div id="choosedimension">
+            <div id="datasizeinput">
+                Insert your download size
+            </div>
+                <input placeholder="0" min=0 type="number" id="datadim">
+            <div id="choosers">
+                KB<input name="chooser" type="radio" id="kb">
+                MB<input name="chooser" type="radio" id="mb">
+                GB<input name="chooser" type="radio" id="gb">
+            </div>
+            <button onclick="go2dwlspeed()">
+                >
+            </button>
+        </div>
+
+        <div hidden=1 id="choosedwlspeed">
+            <div id="datadwlinput">
+                Insert your download speed
+            </div>
+                <input placeholder="0" min=0 type="number" name="" id="dataspeed">
+            <div id="speedchoosers">
+                KBit/s<input name="speedchooser" type="radio" id="kbit/s">
+                MBit/s<input name="speedchooser" type="radio" id="mbit/s">
+                GBit/s<input name="speedchooser" type="radio" id="gbit/s">
+            </div>
+            <button onclick="final()">
+                >
+            </button>
+        </div>
+
+        <div hidden=1 id="result">
+            <div id="dataresult">
+                It'll take <div id="answer"></div>
+            </div><br>
+            <button onclick="backtomenu()">
+                <
+            </button>
+        </div>
+
+        <div class="bottom">Page created by Francesco Milano - Background image from wallpapersafari.com</div>
+    </body>
+</html>

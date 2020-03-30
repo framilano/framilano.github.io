@@ -69,7 +69,7 @@ function appendRow() {
     emptyline = document.createElement('tr')
     empytbox = document.createElement('td')
     empytbox.setAttribute('colspan', 8)
-    if (counter != 1) empytbox.innerHTML = '<hr style=\"width:100%;border:transparent; height:4px; background-color:#181818\">'
+    if (counter != 1) empytbox.innerHTML = '<hr style=\"width:100%;border:transparent; height:8px; background-color:#181818\">'
     emptyline.appendChild(empytbox)
 
     document.getElementById('gametable').appendChild(emptyline)
