@@ -86,7 +86,7 @@ def main():
     decxday = [int(h[10]) if h[9] else 0 for h in listadati]         #Lista z per giorno
     guaxday = [int(h[9]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
     contxday = [int(h[7])if h[7] else 0 for h in singledays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
-    print(contxday)
+    
     # Creazioni Serie
     deathseries = pd.Series(data=decxday, index=giornocasi)
     healseries = pd.Series(data=guaxday, index=giornocasi)
