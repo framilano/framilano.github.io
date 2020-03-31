@@ -29,12 +29,12 @@ def main():
     lasttwodays = list(covid_parser)[-2:]
     today, yesterday = lasttwodays[1], lasttwodays[0]
 
-    tamponi = int(today[11])
-    totalecasiposabs = int(today[10])
+    tamponi = int(today[12])
+    totalecasiposabs = int(today[11])
     totalecasinegabs = tamponi - totalecasiposabs
 
     #Creo aerogramma non cumulativo
-    tamponitoday = tamponi - int(yesterday[11])
+    tamponitoday = tamponi - int(yesterday[12])
     casipositivitoday = int(today[7])
     casinegativitoday = tamponitoday - casipositivitoday
 
