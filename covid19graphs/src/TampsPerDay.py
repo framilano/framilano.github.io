@@ -41,26 +41,13 @@ def addtext(list1, list2, colore):
 def savegraph(title):
     plt.title(title, fontsize=20)
     plt.legend(fontsize = 20)
-    plt.savefig('../assets/deathconhealperdayline.png', dpi=100, bbox_inches="tight")
+    plt.savefig('../assets/tampsperday.png', dpi=100, bbox_inches="tight")
 
 #Funzione chiamante di addtext
 def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
 
-# Salva le statistiche record in un file in assets
-def savetopstats(listelements, listnames, statsfile):
-    for s, name in zip(listelements, listnames):
-        print(name +": "+ str(s.max()), file=statsfile)
-    return
-
-# Salva le statistiche cumulative in un file in assets
-def savetotstats(listall, listnames, statsfile):
-    lastrow = listall[-1:][0]
-    print(listnames[0] +": "+ str(lastrow[10]), file=statsfile)
-    print(listnames[1] +": "+ str(lastrow[9]), file=statsfile)
-    print(listnames[2] +": "+ str(lastrow[7]), file=statsfile)
-    return
 
 def main():
 
@@ -83,40 +70,32 @@ def main():
     removehourandyear(giornocasi)
 
     # Liste di dati    
-    decxday = [int(h[10]) if h[9] else 0 for h in listadati]         #Lista decessi per giorno
-    guaxday = [int(h[9]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
-    contxday = [int(h[7])if h[7] else 0 for h in originaldays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
+
+    tampxday = [int(h[12]) if h[12] else 0 for h in listadati]        #Lista tamponi per giorno
     
     # Creazioni Serie
-    deathseries = pd.Series(data=decxday, index=giornocasi)
-    healseries = pd.Series(data=guaxday, index=giornocasi)
-    contseries = pd.Series(data=contxday, index=giornocasi)
 
+    tampseries = pd.Series(data=tampxday, index=giornocasi)
 
     #Inserisco stile
     plt.style.use('dark_background')
     plt.figure(figsize=(21, 10))
 
 
-    listaseriescelte  = [deathseries, healseries, contseries]       #Lista delle serie che voglio vedere nel grafico
-    listacolori = ["red", "green", "orange"]                        #Lista dei colori per ogni serie, in ordine
+    listaseriescelte  = [tampseries]       #Lista delle serie che voglio vedere nel grafico
+    listacolori = ["brown"]                        #Lista dei colori per ogni serie, in ordine
 
     # Grafico a linee
-    deathseries.plot(alpha=1, color="red", label="Decessi", marker="o")
-    contseries.plot(alpha=1, color="orange", label="Contagi", marker='o')
-    healseries.plot(alpha=1, color="green", label="Guarigioni", marker='o')
 
+    tampseries.plot(alpha=1, color="brown", label="Tamponi", marker='o')
 
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico decessi/contagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
+    savegraph("Grafico tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
 
-    #Aggiungo statistiche top
-    statsfile = open("../assets/stats.txt","w+")
-    savetopstats(listaseriescelte, ["deathtop", "healtop", "contop"], statsfile)
-    savetotstats(originaldays, ["deathtot", "healtot", "contot"], statsfile)
+
     return
 
 
