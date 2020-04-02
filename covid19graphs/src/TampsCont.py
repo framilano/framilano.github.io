@@ -6,11 +6,13 @@ import copy
 days = 0  # 0 se vuoi vedere ogni giorno dal 24 febbraio
 
 # Funzione che rimuove l'orario dalla data di prelievo dei dati
+
+
 def removehourandyear(listdays):
     for index, elem in enumerate(listdays):
         newelem = elem.split("T")
         listdays[index] = newelem[0]
-    
+
     for index, elem in enumerate(listdays):
         elemlist = elem.split("-")
         listdays[index] = elemlist[1]+"-"+elemlist[2]
@@ -30,72 +32,81 @@ def dayperday(listelements):
             elem[i] = int(elem[i]) - int(originalist[index-1][i])
     return listelements
 
-#Aggiungi valori sulle coordinate
+# Aggiungi valori sulle coordinate
+
+
 def addtext(list1, list2, colore):
     i = 0
     for x, y in zip(list1, list2):
         plt.text(i, y, str(y), fontsize=12, color=colore)
         i += 1
 
-#Funzione di salvataggio del grafico
+# Funzione di salvataggio del grafico
+
+
 def savegraph(title):
     plt.title(title, fontsize=20)
-    plt.legend(fontsize = 20)
-    plt.savefig('../assets/tampsperday.png', dpi=100, bbox_inches="tight")
+    plt.legend(fontsize=20)
+    plt.savefig('../assets/tampscont.png', dpi=100, bbox_inches="tight")
 
-#Funzione chiamante di addtext
+# Funzione chiamante di addtext
+
+
 def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
 
+# Salva le statistiche record in un file in assets
+
+
+
+
 
 def main():
 
-    #Apertura file dove salvare le statistiche
-    statsfile = open("../assets/stats.txt","w+")
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
     covid_parser = csv.reader(covid_file, delimiter=",", quotechar='"')
-    
-    #Escludo la prima riga (cioè formato solo da descrizioni)
+
+    # Escludo la prima riga (cioè formato solo da descrizioni)
     alldays = list(covid_parser)[1:]
-    
-    #Salvo l'originale in caso possa servirmi dopo
+
+    # Salvo l'originale in caso possa servirmi dopo
     originaldays = copy.deepcopy(alldays)[-days:]
 
     # Lista giorni
-    listadati = dayperday(alldays)[-days:]             #Rimuovo la cumulazione dai dati
-    giornocasi = [h[0] for h in listadati][-days:]          #Creo una lista da cui ricavare i giorni interessati
-    #Rimuovo l'ora e l'anno dalle date
+    listadati = dayperday(alldays)[-days:]  # Rimuovo la cumulazione dai dati
+    # Creo una lista da cui ricavare i giorni interessati
+    giornocasi = [h[0] for h in listadati][-days:]
+    # Rimuovo l'ora e l'anno dalle date
     removehourandyear(giornocasi)
 
-    # Liste di dati    
+    # Liste di dati
+    # Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
+    contxday = [int(h[7])if h[7] else 0 for h in originaldays]
+    # Lista tamponi per giorno
+    tampxday = [int(h[12]) if h[12] else 0 for h in listadati]
 
-    tampxday = [int(h[12]) if h[12] else 0 for h in listadati]        #Lista tamponi per giorno
-    
     # Creazioni Serie
 
+    contseries = pd.Series(data=contxday, index=giornocasi)
     tampseries = pd.Series(data=tampxday, index=giornocasi)
-
-    #Inserisco stile
+    # Inserisco stile
     plt.style.use('dark_background')
     plt.figure(figsize=(21, 10))
-
-
-    listaseriescelte  = [tampseries]       #Lista delle serie che voglio vedere nel grafico
-    listacolori = ["brown"]                        #Lista dei colori per ogni serie, in ordine
+    # Lista delle serie che voglio vedere nel grafico
+    listaseriescelte = [contseries, tampseries]
+    # Lista dei colori per ogni serie, in ordine
+    listacolori = ["orange", "brown"]
 
     # Grafico a linee
-
-    tampseries.plot(alpha=1, color="brown", label="Tamponi", marker='o')
-
-    #Aggiungo testo e mostro grafico
+    contseries.plot.bar(alpha=.6, color="orange", label="Contagi")
+    tampseries.plot.bar(alpha=.6, color="brown", label="Tamponi")
+    # Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
-
-
+    savegraph("Grafico contagi/tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
     return
 
 
