@@ -100,8 +100,8 @@ def main():
     listacolori = ["orange", "brown"]
 
     # Grafico a linee
-    contseries.plot.bar(alpha=.6, color="orange", label="Contagi")
-    tampseries.plot.bar(alpha=.6, color="brown", label="Tamponi")
+    contseries.plot.bar(color="orange", label="Contagi")
+    tampseries.plot.bar(color="brown", label="Tamponi")
     # Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
