@@ -1,6 +1,6 @@
 deathtop: 969
 healtop: 1590
 contop: 4821
-deathtot: 15362
-healtot: 20996
-contot: 2886
+deathtot: 15887
+healtot: 21815
+contot: 2972
