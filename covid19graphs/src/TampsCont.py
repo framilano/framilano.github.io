@@ -86,27 +86,33 @@ def main():
     contxday = [int(h[7])if h[7] else 0 for h in originaldays]
     # Lista tamponi per giorno
     tampxday = [int(h[12]) if h[12] else 0 for h in listadati]
+    #Lista terapia intensiva
+    intenxday = [int(h[3])if h[3] else 0 for h in originaldays]
 
     # Creazioni Serie
 
     contseries = pd.Series(data=contxday, index=giornocasi)
     tampseries = pd.Series(data=tampxday, index=giornocasi)
+    intenseries = pd.Series(data=intenxday, index=giornocasi)
+
     # Inserisco stile
     plt.style.use('dark_background')
     plt.figure(figsize=(21, 10))
     # Lista delle serie che voglio vedere nel grafico
-    listaseriescelte = [contseries, tampseries]
+    listaseriescelte = [contseries, tampseries, intenseries]
     # Lista dei colori per ogni serie, in ordine
-    listacolori = ["orange", "brown"]
+    listacolori = ["orange", "brown", "purple"]
 
     # Grafico a linee
     tampseries.plot.bar(color="brown", label="Tamponi")
     contseries.plot.bar(color="orange", label="Contagi")
+    intenseries.plot(color="purple", label="Terapia intensiva")
+
     # Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico contagi/tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
+    savegraph("Grafico contagi/tamponi/terapia intensiva per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
     return
 
 
