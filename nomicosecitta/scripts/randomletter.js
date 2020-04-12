@@ -51,7 +51,7 @@ function appendRow() {
     input = document.createElement('input')
     input.setAttribute('type', 'range')
     input.setAttribute('min', 0)
-    input.setAttribute('max', 7)
+    input.setAttribute('max', 8)
     input.setAttribute('step', 0.5)
     input.setAttribute('name', 'point')
     input.setAttribute('oninput', 'updatetotal();document.getElementById(\'' + counter + '\').innerHTML = parseFloat(this.value).toFixed(1)')
