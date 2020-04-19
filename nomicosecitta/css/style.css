@@ -8,6 +8,7 @@ body {
     color: #FFFFFF;
     text-align: center;
     background-color: #000000;
+    background-image: url('../images/background.png');
 }
 
 div {
@@ -42,7 +43,7 @@ button {
     outline:none;
     font-family: 'Natural Toons';
     cursor: pointer;
-    padding: 10px;
+    padding: 7px;
     background-color: #212121;
     font-size: 120%;
     border-radius: 20px;
@@ -60,7 +61,7 @@ button:active {
     background-color: #181818;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
 input {
     padding: 7px;
@@ -68,7 +69,6 @@ input {
     font-family: 'Natural Toons';
     text-align: center;
     font-size: 120%;
-    margin-top: 5%;
     border: transparent;
     border-radius: 20px;
     background-color: #181818;
@@ -93,59 +93,33 @@ input[type=range] {
     background: transparent;
 }
 
-.link {
-    font-family: 'Natural Toons';
-    padding: 10px;
+.choosecat {
+    border: 1;
     background-color: #212121;
-    font-size: 100%;
     border-radius: 20px;
-    color: #7200ca;
-    border-color: #38006b;
+    padding: 7px;
+    width: 40%; 
+    margin: 0 auto;
 }
 
-.bottom {
+.bottomright {
     width: 99%;
     position: fixed;
     bottom: 0;
     text-align: right;
 }
 
+.bottomleft {
+    width: 99%;
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+}
+
 #total {
     font-style: bold;
     font-size: 200%;
     color: #D4AF37;
-}
-
-#nomi {
-    color: #bb002f;
-}
-
-#cose {
-    color: #c43c00;
-}
-
-#città {
-    color: #255d00;
-}
-
-#animali {
-    color: #0039cb;
-}
-
-#cibo {
-    color:#5f4339;
-}
-
-#vip {
-    color:#790e8b;
-}
-
-#mestieri {
-    color:#c68400;
-}
-
-#punteggio {
-    color: #9b0000;
 }
 
 #die {

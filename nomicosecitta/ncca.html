@@ -5,22 +5,33 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    
+
     <h1 style="color:#c7a500">Nomi, cose e citta'</h1>
     <h1 style="margin-top: -45px;color:#0039cb">NIGHTS</h1>
 </head>
 
 <body id="background">
+
+    <div class="choosecat">
+        <div style="font-size: 150%;color:#c7a500">Scrivi le categorie con cui vuoi giocare</div>
+        <input placeholder="Scrivi qui" style="margin-top: 2%;background-color: rgba(121,14,139, .5);" id="newcategory" type="text">
+        <button style="margin-top: 2%;background-color: #181818;" onclick="addcategory(document.getElementById('newcategory'))">Invia!</button>
+    </div>
     <div>
         <table hidden=1 id="gametable">
         </table>
     </div>
+
     <div><button onclick="document.getElementById('gametable').hidden=0;appendRow()">Clicca qui per generare una nuova riga</button></div>
+
     <div id="total">👑 Punteggio totale: 0.0 👑</div>
+
     <div>Clicca sul dado per ottenere una lettera casuale</div>
     <div id="die" onclick="ranlet()"><img height=50 width=50 src="images/dice.png"></div>
 
-    <div class="bottom">Creato da Francesco Milano - "Natural Toons" font by Darrell Flood</div>
+    <div class="bottomright">Creato da Francesco Milano - "Natural Toons" font by Darrell Flood</div>
+    <div class="bottomleft">Hai sbagliato a scrivere qualche categoria? Premi F5!</div>
+
     <audio id="backgroundmusic" onplay="setvolume()" autoplay=1 loop=1>
         <source src="audio/background.mp3" type="audio/mpeg">
     </audio>
