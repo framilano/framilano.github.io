@@ -106,7 +106,7 @@ def main():
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico contagi/tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
+    savegraph("Grafico variazione contagi/tamponi per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
     return
 
 

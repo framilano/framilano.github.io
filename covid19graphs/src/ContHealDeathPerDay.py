@@ -102,16 +102,16 @@ def main():
     listacolori = ["red", "green", "orange"]                        #Lista dei colori per ogni serie, in ordine
 
     # Grafico a linee
-    deathseries.plot(alpha=1, color="red", label="Decessi", marker="o")
-    contseries.plot(alpha=1, color="orange", label="Contagi", marker='o')
-    healseries.plot(alpha=1, color="green", label="Guarigioni", marker='o')
+    deathseries.plot(alpha=0.5, color="red", label="Decessi", marker="o")
+    contseries.plot(alpha=0.5, color="orange", label="Contagi", marker='o')
+    healseries.plot(alpha=0.5, color="green", label="Guarigioni", marker='o')
 
 
     #Aggiungo testo e mostro grafico
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico decessi/contagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
+    savegraph("Grafico decessi/variazione contagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
 
     #Aggiungo statistiche top
     statsfile = open("../assets/stats.txt","w+")
