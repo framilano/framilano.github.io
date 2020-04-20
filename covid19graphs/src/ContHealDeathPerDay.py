@@ -38,9 +38,10 @@ def addtext(list1, list2, colore):
         i += 1
 
 #Funzione di salvataggio del grafico
-def savegraph(title):
+def savegraph(title, len_asse_x):
     plt.title(title, fontsize=20)
     plt.legend(fontsize = 20)
+    plt.plot([0, len_asse_x], [0, 0], color="white")
     plt.savefig('../assets/deathconhealperdayline.png', dpi=100, bbox_inches="tight")
 
 #Funzione chiamante di addtext
@@ -85,12 +86,12 @@ def main():
     # Liste di dati    
     decxday = [int(h[10]) if h[9] else 0 for h in listadati]         #Lista decessi per giorno
     guaxday = [int(h[9]) if h[8] else 0 for h in listadati]         #Lista guarigioni per giorno
-    contxday = [int(h[7])if h[7] else 0 for h in originaldays]       #Lista nuovi contagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
+    varcontxday = [int(h[7])if h[7] else 0 for h in originaldays]       #Lista nuovi varcontagiati per giorno, non uso cumulazione poichè il dato è già giornaliero nel csv
     
     # Creazioni Serie
     deathseries = pd.Series(data=decxday, index=giornocasi)
     healseries = pd.Series(data=guaxday, index=giornocasi)
-    contseries = pd.Series(data=contxday, index=giornocasi)
+    varcontseries = pd.Series(data=varcontxday, index=giornocasi)
 
 
     #Inserisco stile
@@ -98,12 +99,12 @@ def main():
     plt.figure(figsize=(21, 10))
 
 
-    listaseriescelte  = [deathseries, healseries, contseries]       #Lista delle serie che voglio vedere nel grafico
+    listaseriescelte  = [deathseries, healseries, varcontseries]       #Lista delle serie che voglio vedere nel grafico
     listacolori = ["red", "green", "orange"]                        #Lista dei colori per ogni serie, in ordine
 
     # Grafico a linee
     deathseries.plot(alpha=0.5, color="red", label="Decessi", marker="o")
-    contseries.plot(alpha=0.5, color="orange", label="Contagi", marker='o')
+    varcontseries.plot(alpha=0.5, color="orange", label="varcontagi", marker='o')
     healseries.plot(alpha=0.5, color="green", label="Guarigioni", marker='o')
 
 
@@ -111,12 +112,12 @@ def main():
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico decessi/variazione contagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday))
+    savegraph("Grafico decessi/variazione varcontagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday), len(giornocasi))
 
     #Aggiungo statistiche top
     statsfile = open("../assets/stats.txt","w+")
-    savetopstats(listaseriescelte, ["deathtop", "healtop", "contop"], statsfile)
-    savetotstats(originaldays, ["deathtot", "healtot", "contot"], statsfile)
+    savetopstats(listaseriescelte, ["deathtop", "healtop", "varcontop"], statsfile)
+    savetotstats(originaldays, ["deathtot", "healtot", "varcontot"], statsfile)
     return
 
 

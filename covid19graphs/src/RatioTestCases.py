@@ -69,7 +69,7 @@ def main():
     barseries.plot.bar(color=["#9b0000", "#0039cb"])
     plt.text(0, barseries['Positivi']+2000, str(barseries['Positivi']),fontsize=12, color="#9b0000", ha="center")
     plt.text(1, barseries['Negativi']+2000, str(barseries['Negativi']),fontsize=12, color="#0039cb", ha="center")
-    savegraph("Tamponi e variazione contagi (aggiornato al {})".format(datatoday + " " + oratoday), "../assets/posnegcumbar.png")
+    savegraph("Tamponi e contagi (aggiornato al {})".format(datatoday + " " + oratoday), "../assets/posnegcumbar.png")
     plt.clf()
 
     # Sezione dedicata al grafico a torta (aerogramma) del non cumulativo
