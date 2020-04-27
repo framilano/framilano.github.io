@@ -104,7 +104,7 @@ def main():
 
     # Grafico a linee
     deathseries.plot(alpha=0.5, color="red", label="Decessi", marker="o")
-    varcontseries.plot(alpha=0.5, color="orange", label="varcontagi", marker='o')
+    varcontseries.plot(alpha=0.5, color="orange", label="Variazione contagi", marker='o')
     healseries.plot(alpha=0.5, color="green", label="Guarigioni", marker='o')
 
 
@@ -112,7 +112,7 @@ def main():
     aggiungitesto(giornocasi, listaseriescelte, listacolori)
     datatoday = listadati[-1][0].split("T")[0]
     oratoday = listadati[-1][0].split("T")[1]
-    savegraph("Grafico decessi/variazione varcontagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday), len(giornocasi))
+    savegraph("Grafico decessi/variazione contagi/guarigioni per giorno (aggiornato al {})".format(datatoday + " " + oratoday), len(giornocasi))
 
     #Aggiungo statistiche top
     statsfile = open("../assets/stats.txt","w+")
