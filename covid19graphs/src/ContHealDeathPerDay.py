@@ -79,7 +79,7 @@ def main():
 
     # Lista giorni
     listadati = dayperday(alldays)[-days:]             #Rimuovo la cumulazione dai dati
-    giornocasi = [h[0] for h in listadati][-days:]          #Creo una lista da cui ricavare i giorni interessati
+    giornocasi = [h[0]  for h in listadati if len(h) != 0][-days:]          #Creo una lista da cui ricavare i giorni interessati
     #Rimuovo l'ora e l'anno dalle date
     removehourandyear(giornocasi)
 
