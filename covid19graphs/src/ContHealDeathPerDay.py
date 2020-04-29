@@ -76,10 +76,14 @@ def main():
     
     #Salvo l'originale in caso possa servirmi dopo
     originaldays = copy.deepcopy(alldays)[-days:]
+    #Elimino linee vuote eventuali
+    originaldays = [h for h in originaldays if len(h) != 0]
 
     # Lista giorni
     listadati = dayperday(alldays)[-days:]             #Rimuovo la cumulazione dai dati
-    giornocasi = [h[0]  for h in listadati if len(h) != 0][-days:]          #Creo una lista da cui ricavare i giorni interessati
+    #Elimino linee vuote eventuali
+    listadati = [h for h in listadati if len(h) != 0]
+    giornocasi = [h[0] for h in listadati][-days:]          #Creo una lista da cui ricavare i giorni interessati
     #Rimuovo l'ora e l'anno dalle date
     removehourandyear(giornocasi)
 

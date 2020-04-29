@@ -1,0 +1,6 @@
+deathtop: 969
+healtop: 3033
+varcontop: 4821
+deathtot: 27682
+healtot: 71252
+varcontot: -548
