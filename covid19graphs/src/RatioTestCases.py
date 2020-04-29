@@ -26,7 +26,8 @@ def main():
     # Apertura dei dati
     covid_file = open("dpc-covid19-ita-andamento-nazionale.csv", "r")
     covid_parser = csv.reader(covid_file, delimiter=",", quotechar='"')
-    lasttwodays = list(covid_parser)[-2:]
+    covid_parser_list = [h for h in covid_parser if len(h) != 0]
+    lasttwodays = list(covid_parser_list)[-2:]
     today, yesterday = lasttwodays[1], lasttwodays[0]
 
     tamponi = int(today[12])

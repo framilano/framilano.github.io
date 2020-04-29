@@ -59,9 +59,6 @@ def aggiungitesto(giorni, listascelte, listacolori):
 # Salva le statistiche record in un file in assets
 
 
-
-
-
 def main():
 
     # Apertura dei dati
@@ -73,9 +70,13 @@ def main():
 
     # Salvo l'originale in caso possa servirmi dopo
     originaldays = copy.deepcopy(alldays)[-days:]
+    # Elimino linee vuote eventuali
+    originaldays = [h for h in originaldays if len(h) != 0]
 
     # Lista giorni
     listadati = dayperday(alldays)[-days:]  # Rimuovo la cumulazione dai dati
+    # Elimino linee vuote eventuali
+    listadati = [h for h in listadati if len(h) != 0]
     # Creo una lista da cui ricavare i giorni interessati
     giornocasi = [h[0] for h in listadati][-days:]
     # Rimuovo l'ora e l'anno dalle date
