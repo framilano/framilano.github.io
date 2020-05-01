@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="scripts/engine.js"></script>
+        <h1>Indovina chi | Mario Edition</h1>
+    </head>
+
+    <body>
+        <div class="topleft" id="score">Punteggio: 0</div>
+        <button class="topright" onclick="reset_game()">Ricomincia</button>
+        <table id="gametable">
+        </table>
+        <button class="bottomleft" onclick="increase_score()">Incrementa punteggio</button>
+        <button class="bottomright" onclick="showrandomcharacter()">Scegli un personaggio casuale</button>
+        <audio id="backgroundmusic" onplay="setvolume()" autoplay=1 loop=1>
+            <source src="assets/audio/superbellhill.mp3" type="audio/mpeg">
+        </audio>
+    </body>
+</html>
+
+<script>generate_table()</script>
