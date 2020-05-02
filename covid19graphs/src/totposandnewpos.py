@@ -36,7 +36,6 @@ def main():
     axes[1].set_title('Variazione positivi', fontsize=20)
     #axes[0] conterrà il secondo grafico a barre
     axes[1].bar(x, y, color="red")
-
     #Ruoto i label sull'asse delle x in verticale
     for tick in axes[0].get_xticklabels():
         tick.set_rotation(90)
