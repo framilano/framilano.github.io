@@ -29,13 +29,27 @@ def main():
     x = dataframe.index
     y = dataframe['totale_positivi']
     axes[0].set_title('Totale positivi', fontsize=20)
+    
+    #Inseisco etichette per ogni barra
+    for i, v in enumerate(y):
+            axes[0].text(i-0.25, 1/20*max(y), str(v), rotation=90)
+
     #axes[0] conterrà il primo grafico a barre
     axes[0].bar(x, y, color="blue")
 
+
     y = dataframe['variazione_totale_positivi']
     axes[1].set_title('Variazione positivi', fontsize=20)
+    
+    #Inseisco etichette per ogni barra
+    for i, v in enumerate(y):
+        axes[1].text(i-0.25, 1/10*max(y), str(v), rotation=90)
+
+
     #axes[0] conterrà il secondo grafico a barre
     axes[1].bar(x, y, color="red")
+
+
     #Ruoto i label sull'asse delle x in verticale
     for tick in axes[0].get_xticklabels():
         tick.set_rotation(90)
