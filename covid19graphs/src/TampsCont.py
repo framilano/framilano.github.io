@@ -6,8 +6,6 @@ import copy
 days = 0  # 0 se vuoi vedere ogni giorno dal 24 febbraio
 
 # Funzione che rimuove l'orario dalla data di prelievo dei dati
-
-
 def removehourandyear(listdays):
     for index, elem in enumerate(listdays):
         newelem = elem.split("T")
@@ -33,8 +31,6 @@ def dayperday(listelements):
     return listelements
 
 # Aggiungi valori sulle coordinate
-
-
 def addtext(list1, list2, colore):
     i = 0
     for x, y in zip(list1, list2):
@@ -42,21 +38,15 @@ def addtext(list1, list2, colore):
         i += 1
 
 # Funzione di salvataggio del grafico
-
-
 def savegraph(title):
     plt.title(title, fontsize=20)
     plt.legend(fontsize=20)
     plt.savefig('../assets/tampscont.png', dpi=100, bbox_inches="tight")
 
 # Funzione chiamante di addtext
-
-
 def aggiungitesto(giorni, listascelte, listacolori):
     for s, c in zip(listascelte, listacolori):
         addtext(giorni, s, c)
-
-# Salva le statistiche record in un file in assets
 
 
 def main():
