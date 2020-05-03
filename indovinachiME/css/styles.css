@@ -34,7 +34,7 @@ img {
 button {
     padding: 7px;
     outline: none;
-    border:3px solid #c3001d;
+    border:3px solid white;
     border-radius: 12px;
     background-color: transparent;
     color: white;
@@ -43,41 +43,6 @@ button {
     font-size: 300%;
     cursor: pointer;
     
-}
-
-.topright {
-    margin-right: 2%;
-    margin-top: 2%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-.topleft {
-    margin-top: 2%;
-    margin-left: 2%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 300%;
-}
-
-.bottomleft {
-    margin-bottom: 2%;
-    margin-left: 2%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    font-size: 300%;
-}
-
-.bottomright {
-    margin-bottom: 2%;
-    margin-right: 2%;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    font-size: 300%;
 }
 
 .rightmiddle {
