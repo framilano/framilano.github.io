@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import csv
 import copy
-days = 3  # 0 se vuoi vedere ogni giorno dal 24 febbraio
+days = 0  # 0 se vuoi vedere ogni giorno dal 24 febbraio
 
 # Funzione che rimuove l'orario dalla data di prelievo dei dati
 def removehourandyear(listdays):
