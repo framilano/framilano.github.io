@@ -98,11 +98,7 @@ def main():
 
     #Inserisco stile
     plt.style.use('dark_background')
-<<<<<<< HEAD
     plt.figure(figsize=(19.2, 10.8), dpi=100)
-=======
-    plt.figure(figsize=(19.2, 10.8))
->>>>>>> f29f03b9fb37f04e7847891bc03aef7d7a66fcd7
 
 
     listaseriescelte  = [deathseries, healseries, varcontseries]       #Lista delle serie che voglio vedere nel grafico
