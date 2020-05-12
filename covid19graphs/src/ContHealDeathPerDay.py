@@ -100,7 +100,7 @@ def main():
 
     #Inserisco stile
     plt.style.use('dark_background')
-    plt.figure(figsize=(21, 10))
+    plt.figure(figsize=(19.2, 10.8))
 
 
     listaseriescelte  = [deathseries, healseries, varcontseries]       #Lista delle serie che voglio vedere nel grafico
