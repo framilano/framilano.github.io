@@ -42,7 +42,7 @@ def savegraph(title, len_asse_x):
     plt.title(title, fontsize=20)
     plt.legend(fontsize = 20)
     plt.plot([0, len_asse_x], [0, 0], color="white")
-    plt.savefig('../assets/deathconhealperdayline.png', dpi=100, bbox_inches="tight")
+    plt.savefig("../assets/deathconhealperdayline.png", bbox_inches='tight')
 
 #Funzione chiamante di addtext
 def aggiungitesto(giorni, listascelte, listacolori):
@@ -64,7 +64,6 @@ def savetotstats(listall, listnames, statsfile):
     return
 
 def main():
-
     #Apertura file dove salvare le statistiche
     statsfile = open("../assets/stats.txt","w+")
     # Apertura dei dati
@@ -97,10 +96,9 @@ def main():
     healseries = pd.Series(data=guaxday, index=giornocasi)
     varcontseries = pd.Series(data=varcontxday, index=giornocasi)
 
-
     #Inserisco stile
     plt.style.use('dark_background')
-    plt.figure(figsize=(21, 10))
+    plt.figure(figsize=(19.2, 10.8), dpi=100)
 
 
     listaseriescelte  = [deathseries, healseries, varcontseries]       #Lista delle serie che voglio vedere nel grafico
