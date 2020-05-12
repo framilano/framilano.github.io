@@ -34,7 +34,7 @@ def dayperday(listelements):
 def addtext(list1, list2, colore):
     i = 0
     for x, y in zip(list1, list2):
-        plt.text(i, y, str(y), fontsize=5, color=colore)
+        plt.text(i, y, str(y), fontsize=8, color=colore)
         i += 1
 
 #Funzione di salvataggio del grafico
