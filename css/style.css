@@ -98,7 +98,6 @@ tr {
 
 .normal {
     filter: invert(0%);
-    margin: auto;
 }
 
 .inverted {
