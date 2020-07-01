@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+#modifica questa variabile per visualizzare gli ultimi n giorni
+days = 30
 
 
 def filter_date(dataframe): 
@@ -35,11 +37,12 @@ def add_labels(series, days, ax):
     colors = ("orange", "green", "red")
     for color, ser in zip(colors,series):
         for day, value in zip(days, ser):
-            ax.text(day, value + 1/70*offset, str(value), color = color, rotation=90)
+            ax.text(day, value + 1/40*offset, str(value), color = color, rotation=90, fontsize=20)
+
 
 def main():
+    global days
     dataframe = pd.read_csv("dpc-covid19-ita-andamento-nazionale.csv", sep=",", index_col=0)
-
     # Rimuovo gli orari, tengo la data
     filter_date(dataframe)
 
@@ -52,7 +55,7 @@ def main():
     fig, ax = plt.subplots(1, 1)
     fig.set_size_inches(19.2, 10.8)
 
-
+    dataframe = dataframe[-days:]
     ax.plot(dataframe.index, dataframe['deceduti'], color="red", marker='o')
     ax.plot(dataframe.index, dataframe['dimessi_guariti'], color="green", marker='o')
     ax.plot(dataframe.index, dataframe['nuovi_positivi'], color="orange", marker='o')

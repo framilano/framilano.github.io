@@ -2,6 +2,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+#modifica questa variabile per visualizzare gli ultimi n giorni
+days = 30
+
 def filter_date(dataframe):
     fixeddate = []
 
@@ -33,12 +36,13 @@ def remove_cumulation(series):
 
 
 def main():
+    global days
     dataframe = pd.read_csv("dpc-covid19-ita-andamento-nazionale.csv", sep=",", index_col=0)
     #Passa una serie del dataframe, ne rimuoverà la cumulazione dei dati, non è in loco
     dataframe['tamponi'] = remove_cumulation(dataframe['tamponi'])
     dataframe['deceduti'] = remove_cumulation(dataframe['deceduti'])
     dataframe['dimessi_guariti'] = remove_cumulation(dataframe['dimessi_guariti'])
-    dataframe = dataframe[-30:]
+    dataframe = dataframe[-days:]
 
     # Rimuovo gli orari, tengo la data
     filter_date(dataframe)
