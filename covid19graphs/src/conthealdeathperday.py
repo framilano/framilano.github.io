@@ -62,6 +62,7 @@ def main():
 
     rotate_ticks(ax)
     ax.legend(("Deceduti", "Guariti", "Nuovi positivi"), fontsize=15)
+    ax.set_title("Deceduti, guariti e nuovi positivi negli ultimi 30 giorni", fontsize=20)
     add_labels((dataframe['nuovi_positivi'], dataframe['dimessi_guariti'], dataframe['deceduti']), dataframe.index, ax)
     fig.tight_layout(pad=3.0)
     fig.savefig("../assets/deathconhealperdayline.png", dpi=100)
