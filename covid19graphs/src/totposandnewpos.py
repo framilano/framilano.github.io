@@ -20,8 +20,13 @@ def filter_date(dataframe):
     return
 
 def add_text_overbar(dataframe, title, color, offset, ax):
+    listadati = [h if h > 0 else -h for h in dataframe[title]]
+    maxval = max(listadati)
     for i, v in enumerate(dataframe[title]):
-            ax.text(i-0.125, offset*max(dataframe[title]), str(v), rotation=90, color=color, fontsize=15)
+        if (v < 0):
+            ax.text(i-0.125, -offset*maxval, str(v), rotation=90, color=color, fontsize=15)
+        else:
+            ax.text(i-0.125, offset*maxval, str(v), rotation=90, color=color, fontsize=15)
 
 def rotate_ticks(axes):
     for ax in axes:
@@ -56,7 +61,7 @@ def main():
     #Sezione variazione positivi
     axes[1].set_title('Variazione positivi dal giorno precedente (ultimi 30 giorni)', fontsize=20)
     #Inserisco etichette per ogni barra
-    add_text_overbar(dataframe, 'variazione_totale_positivi', "white", 4, axes[1])
+    add_text_overbar(dataframe, 'variazione_totale_positivi', "white", 1/3, axes[1])
     #axes[1] conterrà il secondo grafico a barre
     axes[1].bar(x, dataframe['variazione_totale_positivi'], color="red")
 
