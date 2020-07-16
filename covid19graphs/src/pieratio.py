@@ -37,7 +37,7 @@ totale_nondeceduti = totale_casi - totale_deceduti
 # Creo primo grafico
 axes[0].set_title("Rapporto decessi e numero totale di casi registrati " +
                   str(dataframe.index.values), fontsize=15)
-axes[0].pie([totale_deceduti, totale_nondeceduti], labels=["Deceduti\n" + "[" + str(totale_deceduti) + "]", "Non deceduti\n" + "[" +
+axes[0].pie([totale_deceduti, totale_nondeceduti], labels=["Deceduti\n" + "[" + str(totale_deceduti) + "]", "Guariti\n" + "[" +
                                                    str(totale_nondeceduti) + "]"], colors=["#280680", "#00b248"], textprops={'fontsize': 20})
 
 # Creo secondo grafico
