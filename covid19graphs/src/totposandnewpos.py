@@ -23,10 +23,7 @@ def add_text_overbar(dataframe, title, color, offset, ax):
     listadati = [h if h > 0 else -h for h in dataframe[title]]
     maxval = max(listadati)
     for i, v in enumerate(dataframe[title]):
-        if (v < 0):
-            ax.text(i-0.125, -offset*maxval, str(v), rotation=90, color=color, fontsize=15)
-        else:
-            ax.text(i-0.125, offset*maxval, str(v), rotation=90, color=color, fontsize=15)
+        ax.text(i-0.125, offset*maxval, str(v), rotation=90, color=color, fontsize=15)
 
 def rotate_ticks(axes):
     for ax in axes:
@@ -54,21 +51,27 @@ def main():
     #Sezione totale positivi
     axes[0].set_title('Totale positivi (ultimi 30 giorni)', fontsize=20)
     #Inserisco etichette per ogni barra
-    add_text_overbar(dataframe, 'totale_positivi', "white", 1/20, axes[0])
+    add_text_overbar(dataframe, 'totale_positivi', "white", 1/10, axes[0])
     #axes[0] conterrà il primo grafico a barre
     axes[0].bar(x, dataframe['totale_positivi'], color="blue")
 
     #Sezione variazione positivi
     axes[1].set_title('Variazione positivi dal giorno precedente (ultimi 30 giorni)', fontsize=20)
     #Inserisco etichette per ogni barra
-    add_text_overbar(dataframe, 'variazione_totale_positivi', "white", 1/3, axes[1])
+    add_text_overbar(dataframe, 'variazione_totale_positivi', "white", 1/10, axes[1])
+    #Un accorgimento per centrare il grafico quando ci sono sia dati positivi che negativi
+    maxvarpos = max(dataframe['variazione_totale_positivi'].apply(lambda n: abs(n)))
+    offset = 1/10 * maxvarpos
+    #setto i limiti dell'asse y
+    axes[1].set_ylim(-maxvarpos - offset, maxvarpos + offset)
     #axes[1] conterrà il secondo grafico a barre
     axes[1].bar(x, dataframe['variazione_totale_positivi'], color="red")
+
 
     #Sezione nuovi positivi per giorno
     axes[2].set_title('Nuovi positivi giornalieri (ultimi 30 giorni)', fontsize=20)
     #Inserisco etichette per ogni barra
-    add_text_overbar(dataframe, 'nuovi_positivi', "white", 1/20, axes[2])
+    add_text_overbar(dataframe, 'nuovi_positivi', "white", 1/10, axes[2])
     #axes[2] conterrà il secondo grafico a barre
     axes[2].bar(x, dataframe['nuovi_positivi'], color="brown")
 
