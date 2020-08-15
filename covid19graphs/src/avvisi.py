@@ -25,8 +25,10 @@ avvisi.close()
 #If the the previous alert date and the new one are different, send a telegram message to the Telegram channel
 if (data_vecchio_avviso != data_ultimo_avviso): 
     avviso_odierno = open("../assets/avviso_odierno.txt", "w")
-    avviso_odierno.write(data_ultimo_avviso+"\n"+messaggio)
-    msg_formattato = "*"+ data_ultimo_avviso + "*" + "\n" + messaggio
+    avviso_odierno.write(data_ultimo_avviso + "\n" + messaggio)
+    msg_formattato = "*Avviso del " + data_ultimo_avviso + "*" + "\n" + messaggio
     os.system("telegram-send --format markdown " + "\"" + msg_formattato + "\"")
+else :
+    os.system("telegram-send \"Buona serata 🌙\"")
 #Closing current alert after updating it
 avviso_odierno.close()
