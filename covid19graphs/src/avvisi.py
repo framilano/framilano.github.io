@@ -1,7 +1,7 @@
 import os
 
 #Moving avvisi.md knowing that the COVID-19 repo has already been pulled
-os.system ("cp /home/francesco/Documents/GithubRepos/COVID-19/avvisi.md /home/francesco/Documents/GithubRepos/framilano.github.io/covid19graphs/src")
+os.system ("cp /home/pi/Documents/GithubRepos/COVID-19/avvisi.md /home/pi/Documents/GithubRepos/framilano.github.io/covid19graphs/src")
 avvisi = open("avvisi.md", "r")
 #Opening the previous saved message
 avviso_odierno = open("../assets/avviso_odierno.txt", "r")
