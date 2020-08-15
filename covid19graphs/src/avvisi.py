@@ -16,6 +16,7 @@ for indice, linea in enumerate(avvisi.readlines()):
             data_ultimo_avviso = avvisi.readlines()[indice + 1].replace("<b>", "").replace("</b>", "").replace("<br>", "").replace("\n", "")
             avvisi.seek(0)
             messaggio = avvisi.readlines()[indice + 2].replace("\n", "")
+            break
 
 if (data_vecchio_avviso != data_ultimo_avviso): 
     avviso_odierno = open("../assets/avviso_odierno.txt", "w")
