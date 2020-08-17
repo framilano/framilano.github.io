@@ -1,4 +1,6 @@
 import os
+import datetime as dt
+
 
 #Moving avvisi.md knowing that the COVID-19 repo has already been pulled
 os.system ("cp /home/pi/Documents/GithubRepos/COVID-19/avvisi.md /home/pi/Documents/GithubRepos/framilano.github.io/covid19graphs/src")
@@ -30,5 +32,10 @@ if (data_vecchio_avviso != data_ultimo_avviso):
     os.system("telegram-send --format markdown " + "\"" + msg_formattato + "\"")
 else :
     os.system("telegram-send \"Buona serata 🌙\"")
+
 #Closing current alert after updating it
 avviso_odierno.close()
+
+
+#Logging (case of failure)
+open("/home/pi/Documents/Logs/log_avvisicovid19.txt", "w").write(str(dt.datetime.today()) + "\n" + data_vecchio_avviso + "\n" + data_ultimo_avviso)
