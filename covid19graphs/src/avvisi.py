@@ -21,6 +21,7 @@ messaggio = ""
 data_ultimo_avviso = ""
 
 avvisi_string = remove_emptylines(avvisi)
+avvisi.close()
 
 #Parsing the latest alert
 for indice, linea in enumerate(avvisi_string.splitlines()):
