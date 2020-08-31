@@ -1,6 +1,13 @@
 import os
 import datetime as dt
 
+def remove_emptylines(avvisi):
+    new_avvisi = ""
+    for line in avvisi.readlines():
+        if (line == "\n"): continue
+        else: new_avvisi += line
+    return new_avvisi
+
 
 #Moving avvisi.md knowing that the COVID-19 repo has already been pulled
 os.system ("cp ~/Documents/GithubRepos/COVID-19/avvisi.md ~/Documents/GithubRepos/framilano.github.io/covid19graphs/src")
@@ -13,16 +20,15 @@ data_vecchio_avviso = avviso_odierno.readline().replace("\n", "")
 messaggio = ""
 data_ultimo_avviso = ""
 
+avvisi_string = remove_emptylines(avvisi)
+
 #Parsing the latest alert
-for indice, linea in enumerate(avvisi.readlines()):
+for indice, linea in enumerate(avvisi_string.splitlines()):
         if ("## Avvisi" in linea):
-            avvisi.seek(0)
-            data_ultimo_avviso = avvisi.readlines()[indice + 1].replace("<b>", "").replace("</b>", "").replace("<br>", "").replace("\n", "")
-            avvisi.seek(0)
-            messaggio = avvisi.readlines()[indice + 2].replace("\n", "")
+            data_ultimo_avviso = avvisi_string.splitlines()[indice + 1].replace("<b>", "").replace("</b>", "").replace("<br>", "").replace("\n", "")
+            messaggio = avvisi_string.splitlines()[indice + 2].replace("\n", "")
             break
-#Closing avvisi.md after parsing the latest alert
-avvisi.close()
+
 
 #If the the previous alert date and the new one are different, send a telegram message to the Telegram channel
 if (data_vecchio_avviso != data_ultimo_avviso): 
@@ -38,5 +44,11 @@ else :
 avviso_odierno.close()
 
 
-#Logging (case of failure)
-open("~/Documents/Logs/log_avvisicovid19.txt", "w").write(str(dt.datetime.today()) + "\n" + data_vecchio_avviso + "\n" + data_ultimo_avviso)
+# Logging (case of failure)
+# Defining log dir
+# os.path.expanduser(path)
+# On Unix and Windows, return the argument with an initial component of ~ or ~user replaced by that user’s home directory.
+# On Unix, an initial ~ is replaced by the environment variable HOME if it is set; otherwise the current user’s home 
+# directory is looked up in the password directory through the built-in module pwd. An initial ~user is looked up directly in the password directory.
+log_dir = os.path.expanduser("~/Documents/Logs/log_avvisicovid19.txt")
+open(log_dir, "w").write(str(dt.datetime.today()) + "\nMessaggio: {}\nVecchio: {}\nNuovo: {}\n".format(messaggio, data_vecchio_avviso, data_ultimo_avviso))
