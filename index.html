@@ -1,126 +1,49 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
 
-<body class="darkbody">
-    <table style="width: 100%;">
-        <tr>
-            <td class="navigation" style="background-color: #9b0000;" onclick="displaysection('About')">Francesco Milano</td>
-            <td class="navigation" style="background-color: #c41c00;" onclick="displaysection('Progetti')">Progetti</td>
-            <td class="navigation" style="background-color: #c79100;" onclick="displaysection('Contatti')">Contatti</td>
-        </tr>
-    </table>
-    
-    <div style="width: 100%;text-align: right;">
-        <button class="buttondark" id="themebutton"
-            onclick="changetheme(document.getElementById('themebutton').innerHTML)">☀️</button>
+<body>
+    <nav>
+        <ul>
+            <li title="Refresh this page"><a href="index.html">Francesco Milano</a>
+            <li class="dropdown"><a class="dropbtn" href="projects.html">Projects</a>
+            <div class="dropdown-content">
+                <a href="https://github.com/framilano/Updatium">Updatium</a>
+                <a href="https://github.com/framilano/pcsx2Updater">PCSX2 Updater</a>
+                <a href="https://github.com/framilano/fromCtoF">fromCtoF</a>
+                <a href="https://framilano.github.io/covid19graphs/covid19.html">COVID-19 graphs (Italy)</a>
+                <a href="https://framilano.github.io/downloadcalculator/calculator.html">Download time calculator</a>
+                <a href="https://framilano.github.io/indovinachiME/indovinachiME.html">Guess Who Mario Edition</a>
+                <a href="https://framilano.github.io/nomicosecitta/ncca.html">Nomi, cose e città</a>
+            </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn" href="contact.html">Contact</a>
+            <div class="dropdown-content">
+                <a href="https://www.linkedin.com/in/francesco-milano-365105149/">LinkedIn</a>
+                <a href="https://twitter.com/milano_fra">Twitter</a>
+                <a href="https://www.reddit.com/user/TheKronorium98">Reddit</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="page-content">
+        <img src="assets/profile.jpg", height=200, width=150>
+    <p><div class="title">This is Francesco Milano Github site</div><br> 
+        Born in Milan in 1998 
+        I always been passionate about electronics and computers!<br> 
+        I'm currently a CS student at <a href="https://www.unimi.it/it">Università degli Studi di Milano</a><br> 
+        In this site you can find different projects and exercises that I did for personal use during the past years.<br> 
+        I'm currently studying different programming languages, including Golang, C, Java, PHP, JavaScript, Python and Rust.<br>
+        Some experience with HTML5, CSS, different Interfaces frameworks like Electron, Tkinter and Swing.<br>
+        Really passionate about database management through Postgres, fascinated by PLPgSQL.<br>
+        Created different Telegram Bots to manage BUS schedules, Note reminders, interaction with channels for news (i.e COVID-19 graphs).
+    </p>
     </div>
     
-    <!--About-->
-    <table class="tablecontent" hidden=1 id="About">
-        <tr>
-            <td><img border="0" alt="Profile" src="../assets/profile.jpg" width="150" height="200">
-            </td>
-        </tr>
-    </table>
-
-    <!--Progetti-->
-    <table class="tablecontent" hidden=1 id="Progetti">
-        <tr>
-            <th>Esercizi</th>
-        </tr>
-        <tr class="onthecenter">
-            <td class="onthecenter"><a href="https://github.com/framilano/fromCtoF">Convertitore di temperature (Scritto con il framework Electron)</a></td>
-        </tr>
-        <tr>
-            <th>Esercizi Web</th>
-        </tr>
-        <tr class="onthecenter">
-            <td class="onthecenter"><a href="covid19graphs/covid19.html">Grafici Covid-19 in Italia</a></td>
-        </tr>
-        <tr class="onthecenter">
-            <td class="onthecenter"><a href="downloadcalculator/calculator.html">Calcolatore di tempo necessario al download di un file</a></td>
-        </tr>
-        <tr>
-            <th>Giochi da tavolo -> digitali</th>
-        </tr>
-        <tr class="onthecenter">
-            <td class="onthecenter"><a href="nomicosecitta/ncca.html">Conversione digitale del famoso gioco "Nomi, cose e città"</a></td>
-        </tr>
-        <tr class="onthecenter">
-            <td class="onthecenter"><a href="indovinachiME/indovinachiME.html">Conversione digitale di "Indovina Chi" in salsa Super Mario</a></td>
-            
-        </tr>
-    </table>
-
-    <!--Contatti-->
-    <table class="tablecontent" hidden=1 id="Contatti">
-
-        <tr>
-            <th class="onthecenter">Indirizzo mail studentesco</th>
-            <td class="onthecenter">francesco.milano1@studenti.unimi.it</td>
-        </tr>
-        <tr>
-            <th class="onthecenter">Indirizzo mail personale</th>
-            <td class="onthecenter">milano.francesco@protonmail.com</td>
-        </tr>
-        <tr>
-            <th class="onthecenter">Profilo Twitter</th>
-            <td class="onthecenter"><a href="https://twitter.com/milano_fra">@milano_fra</a></td>
-        </tr>
-        <tr>
-            <th class="onthecenter">Profilo Linkedin</th>
-            <td class="onthecenter"><a href="https://www.linkedin.com/in/francesco-milano-365105149/">Francesco
-                    Milano</a>
-            </td>
-        </tr>
-
-    </table>
-
-
 </body>
 
 </html>
-
-<script>
-    function changetheme(icon) {
-        switch (icon) {
-            case '☀️':
-                document.getElementsByTagName('body')[0].className = 'lightbody'
-                document.getElementById('themebutton').innerHTML = '🌙'
-                document.getElementById('themebutton').className = 'buttonlight'
-                break;
-            case '🌙':
-                document.getElementsByTagName('body')[0].className = 'darkbody'
-                document.getElementById('themebutton').innerHTML = '☀️'
-                document.getElementById('themebutton').className = 'buttondark'
-                break;
-        }
-    }
-
-    function displaysection(section) {
-        switch (section) {
-            case 'About':
-                document.getElementById('About').hidden = 0
-                document.getElementById('Progetti').hidden = 1
-                document.getElementById('Contatti').hidden = 1
-                break;
-            case 'Progetti':
-                document.getElementById('About').hidden = 1
-                document.getElementById('Progetti').hidden = 0
-                document.getElementById('Contatti').hidden = 1
-                break;
-            case 'Contatti':
-                document.getElementById('About').hidden = 1
-                document.getElementById('Progetti').hidden = 1
-                document.getElementById('Contatti').hidden = 0
-                break;
-        }
-    }
-</script>
