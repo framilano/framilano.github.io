@@ -1,0 +1,21 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.theme-switcher {
+    cursor: pointer;
+    border:none;
+    outline:none;
+    padding:10px;
+    background-color: #151515;
+    border-radius: 25px;
+    font-size: large;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.images {
+    filter: invert(0%)   
+}

@@ -2,50 +2,28 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css" />
+    <script src="js/script.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <div style="text-align: left">Vuoi ricevere gli aggiornamenti direttamente su Telegram? Iscriviti a <a href="https://t.me/covid19graphs">questo canale</a></div>
-    <div style="margin-top: 1%;"><a href="https://github.com/pcm-dpc/COVID-19">Data source</a>
-    <div style="width: 100%;text-align: right;">
-        <button class="buttondark" id="themebutton"
-            onclick="changetheme(document.getElementById('themebutton').innerHTML)">☀️</button>
-    </div>
-    <h1>Grafici andamento Covid-19 in Italia</h1>
-    </div>
+    <button title="Switch dark/light theme" id="btn_theme" onclick="change_theme(document.getElementById('btn_theme'))"
+        class="theme-switcher">🌙</button>
 </head>
 
-<body class="darkbody">
+<body>
+    <h1 style="margin-top:4%">Grafici andamento Covid-19 in Italia</h1>
+    <div style="text-align: left">Vuoi ricevere gli aggiornamenti direttamente su Telegram?
+        Iscriviti a <a href="https://t.me/covid19graphs">questo canale</a></div>
+    <div style="margin-top: 1%;"><a href="https://github.com/pcm-dpc/COVID-19">Data source</a></div>
     <div style="text-align: center; margin-top: 3%;">Tutti i grafici vengono aggiornati ogni giorno alle 19:00</div>
-    <div style="margin-top:4%; text-align:center;"><img width="1900" height="1080" class="normal" src="assets/deathconhealperdayline.png"></div>
-    <div style="margin-top:4%; text-align:center;"><img width="1900" height="1080" class="normal" src="assets/totposandvariation.png"></div>
-    <div style="margin-top:4%; text-align:center;"><img width="1900" height="1080" class="normal" src="assets/tampscontdeath.png"></div>
-    <div style="margin-top:4%; text-align:center;"><img width="1900" height="1080" class="normal" src="assets/pieratio.png"></div>
+    <div class="images" style="margin-top:4%; text-align:center;"><img width="1900" height="1080"
+            src="assets/deathconhealperdayline.png"></div>
+    <div class="images" style="margin-top:4%; text-align:center;"><img width="1900" height="1080"
+            src="assets/totposandvariation.png"></div>
+    <div class="images" style="margin-top:4%; text-align:center;"><img width="1900" height="1080"
+            src="assets/tampscontdeath.png"></div>
+    <div class="images" style="margin-top:4%; text-align:center;"><img width="1900" height="1080"
+            src="assets/pieratio.png"></div>
 </body>
 
 </html>
-
-<script>
-    function changetheme(icon) {
-        switch (icon) {
-            case '☀️':
-                document.getElementsByTagName('body')[0].className = 'lightbody'
-                document.getElementById('themebutton').innerHTML = '🌙'
-                document.getElementById('themebutton').className = 'buttonlight'
-                collection = document.getElementsByTagName('img')
-                for (const item of collection) {
-                    item.className = 'inverted'
-                }
-                break;
-            case '🌙':
-                document.getElementsByTagName('body')[0].className = 'darkbody'
-                document.getElementById('themebutton').innerHTML = '☀️'
-                document.getElementById('themebutton').className = 'buttondark'
-                collection = document.getElementsByTagName('img')
-                for (const item of collection) {
-                    item.className = 'normal'
-                }
-                break;
-        }
-    }
-</script>
