@@ -4,12 +4,14 @@
 <head>
     <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li title="Refresh this page"><a href="index.html">Francesco Milano</a>
+            <li class="dropdown" title="Refresh this page"><a href="index.html">Francesco Milano</a>
             <li class="dropdown"><a class="dropbtn" href="projects.html">Projects</a>
             <div class="dropdown-content">
                 <a href="https://github.com/framilano/Updatium">Updatium</a>
@@ -29,6 +31,7 @@
             </div>
             </li>
         </ul>
+        <button title="Switch dark/light theme" id="btn_theme" onclick="change_theme(document.getElementById('btn_theme'))" class="theme-switcher">🌙</button>
     </nav>
     <div class="page-content">
         <img src="assets/profile.jpg", height=200, width=150>
