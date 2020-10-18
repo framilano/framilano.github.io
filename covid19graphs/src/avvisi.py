@@ -40,7 +40,7 @@ if (data_vecchio_avviso != data_ultimo_avviso):
     msg_formattato = msg_formattato.replace("\"", "'")
     os.system("telegram-send --format markdown " + "\"" + msg_formattato + "\"")
 else :
-    os.system("telegram-send \"Buona serata 🌙\"")
+    os.system("telegram-send \"Buona serata 😷\"")
 
 #Closing current alert after updating it
 avviso_odierno.close()
