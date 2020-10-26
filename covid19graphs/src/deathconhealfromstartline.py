@@ -47,7 +47,7 @@ def main():
     ax.plot(dataframe['nuovi_positivi'], color="orange")
 
     ax.legend(("Deceduti", "Guariti", "Nuovi positivi"), fontsize=15)
-    ax.set_title("Deceduti, guariti e nuovi positivi negli ultimi 30 giorni", fontsize=20)
+    ax.set_title("Deceduti, guariti e nuovi positivi dal 24/02/2020", fontsize=20)
     ax.set_xticks([])
     fig.tight_layout(pad=3.0)
     fig.savefig("../assets/deathconhealfromstartline.png", dpi=100)
