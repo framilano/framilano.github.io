@@ -38,9 +38,9 @@ if (data_vecchio_avviso != data_ultimo_avviso):
     avviso_odierno.write(data_ultimo_avviso + "\n" + messaggio)
     msg_formattato = "*Avviso del " + data_ultimo_avviso + "*" + "\n" + messaggio
     msg_formattato = msg_formattato.replace("\"", "'")
-    os.system("telegram-send --configure /home/pi/Documents/TelegramBots/TelegramSendConfigs/covid19graphs.conf --format markdown " + "\"" + msg_formattato + "\"")
+    os.system("telegram-send --config /home/pi/Documents/TelegramBots/TelegramSendConfigs/covid19graphs.conf --format markdown " + "\"" + msg_formattato + "\"")
 else :
-    os.system("telegram-send --configure /home/pi/Documents/TelegramBots/TelegramSendConfigs/covid19graphs.conf \"Buona serata 😷\"")
+    os.system("telegram-send --config /home/pi/Documents/TelegramBots/TelegramSendConfigs/covid19graphs.conf \"Buona serata 😷\"")
 
 #Closing current alert after updating it
 avviso_odierno.close()
