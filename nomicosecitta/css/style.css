@@ -9,6 +9,7 @@ body {
     text-align: center;
     background-color: #000000;
     background-image: url('../images/background.png');
+    background-attachment: fixed;
 }
 
 div {
