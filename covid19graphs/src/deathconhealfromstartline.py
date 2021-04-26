@@ -10,8 +10,8 @@ def filter_date(dataframe):
 
     for h in dataframe.index:
         h = h.split('T')[0]
-        (_, month, day) = h.split('-')
-        h = month + "-" + day
+        (year, month, day) = h.split('-')
+        h = year + "-" + month + "-" + day
         fixeddate.append(h)
 
     #Sostituisco l'indice con i nuovi dati
