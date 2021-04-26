@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Natural Toons';
+    src: url('../fonts/Natural\ Toons.otf'), url('../fonts/Natural\ Toons.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Natural Toons';
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #000000;
+    background-image: url('../images/background.png');
+    background-attachment: fixed;
+}
+
+div {
+    margin-top: 2%;
+}
+
+table {
+    padding: 5px;
+    border-radius: 20px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    border: transparent;
+    background-color: #212121;
+}
+
+th {
+    font-size: 180%;
+    text-align: center;
+}
+
+td {
+    font-size: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 500%;
+}
+
+button {
+    outline:none;
+    font-family: 'Natural Toons';
+    cursor: pointer;
+    padding: 7px;
+    background-color: #212121;
+    font-size: 120%;
+    border-radius: 20px;
+    color: #c7a500;
+    border: transparent;
+}
+
+button::-moz-focus-inner {
+    outline:none;
+    border: 0;
+}
+
+button:active {
+    outline:none;
+    background-color: #181818;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+input {
+    padding: 7px;
+    width: 85%;
+    font-family: 'Natural Toons';
+    text-align: center;
+    font-size: 120%;
+    border: transparent;
+    border-radius: 20px;
+    background-color: #181818;
+    color: white;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    background:#000000;
+    border-radius: 30%;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #9b0000;
+}
+
+input[type=range] {
+    background: transparent;
+}
+
+.choosecat {
+    border: 1;
+    background-color: #212121;
+    border-radius: 20px;
+    padding: 7px;
+    width: 40%; 
+    margin: 0 auto;
+}
+
+.bottomright {
+    width: 99%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+}
+
+.bottomleft {
+    width: 99%;
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+}
+
+#total {
+    font-style: bold;
+    font-size: 200%;
+    color: #D4AF37;
+}
+
+#die {
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    border: none;
+    font-size: 200%;
+}
