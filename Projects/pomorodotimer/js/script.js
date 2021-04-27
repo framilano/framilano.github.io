@@ -24,7 +24,7 @@ function spawnShortBreakTimer() {
     current_timer = "shortbreak"
     timer = document.getElementById('timer')
     timer.value ="shortbreak"
-    timer.innerHTML = "00:10"
+    timer.innerHTML = "05:00"
 }
 
 function alarm() {
