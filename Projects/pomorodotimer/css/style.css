@@ -4,10 +4,6 @@ body {
     color: #ba000d;
 }
 
-#title {
-    font-size:300%
-}
-
 #container {
     text-align: center;
 }
@@ -17,7 +13,7 @@ body {
     padding: 3%;
     margin-right: 32%;
     margin-left:32%;      
-    border-radius: 15px;
+    border-radius: 3%;
     width: 30%;
 }
 
@@ -36,7 +32,7 @@ button {
     padding-top: 1%;
     padding-bottom: 1%;
     border:none;
-    border-radius: 5px;
+    border-radius: 3%;
     font-size: 200%;
 }
 
@@ -47,7 +43,7 @@ button {
     padding-top: 1%;
     padding-bottom: 1%;
     border:none;
-    border-radius: 10px;
+    border-radius: 3%;
     font-size: 200%;
 }
 
@@ -55,16 +51,25 @@ button {
     text-align: center;
 }
 
-#startbtn:disabled {
+#startbtn {
+    font-weight: 700;
+    box-shadow: 0px 3% 0px 0px #7f0000;
     background-color: #ba000d;
     color:#151515;
     font-size: 200%;
 }
 
-#startbtn {
-    font-weight: 700;
-    box-shadow: 0px 5px 0px 0px #7f0000;
-    background-color: #ba000d;
-    color:#151515;
-    font-size: 200%;
+#welcomebar {
+    text-align: center;
+}
+
+#title {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 500%;
+}
+
+#description {
+    margin-top: 0%;
+    font-size: 250%;
 }
