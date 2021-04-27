@@ -6,7 +6,7 @@ document.getElementById('startbtn').addEventListener("click", startTimer);
 intervalID = 0
 audio = new Audio('assets/alarm.mp3');
 audio1 = new Audio('assets/start.mp3')
-current_timer = ""
+current_timer = "pomodoro"
 
 function spawnPomodoroTimer() {
     document.getElementById('startbtn').innerHTML ="START"
