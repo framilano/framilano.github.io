@@ -8,6 +8,7 @@ audio = new Audio('assets/alarm.mp3');
 current_timer = ""
 
 function spawnPomodoroTimer() {
+    document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('pomodorobtn').className="selectedbutton"
     document.getElementById('shortbreakbtn').className=""
     clearInterval(intervalID)
@@ -18,6 +19,7 @@ function spawnPomodoroTimer() {
 }
 
 function spawnShortBreakTimer() {
+    document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('shortbreakbtn').className="selectedbutton"
     document.getElementById('pomodorobtn').className=""
     clearInterval(intervalID)
