@@ -5,6 +5,7 @@ document.getElementById('startbtn').addEventListener("click", startTimer);
 
 intervalID = 0
 audio = new Audio('assets/alarm.mp3');
+audio1 = new Audio('assets/start.mp3')
 current_timer = ""
 
 function spawnPomodoroTimer() {
@@ -54,6 +55,7 @@ function updateTimer() {
 }
 
 function startTimer() {
+    audio1.play()
     if (document.getElementById('startbtn').innerHTML == "PAUSE") {
         clearInterval(intervalID)
         document.getElementById('startbtn').innerHTML ="RESUME"
