@@ -10,7 +10,7 @@ def remove_emptylines(avvisi):
 
 
 #Moving avvisi.md knowing that the COVID-19 repo has already been pulled
-os.system ("cp ~/Documents/GithubRepos/COVID-19/avvisi.md ~/Documents/GithubRepos/framilano.github.io/covid19graphs/src")
+os.system ("cp ~/Documents/GithubRepos/COVID-19/avvisi.md ~/Documents/GithubRepos/framilano.github.io/Projects/covid19graphs/src")
 avvisi = open("avvisi.md", "r")
 #Opening the previous saved message
 avviso_odierno = open("../assets/avviso_odierno.txt", "r")
