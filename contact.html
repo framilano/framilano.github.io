@@ -6,34 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="js/script.js"></script>
+        <script src="js/htmlimporter.js"></script>
     </head>
 
 <body>
-    <nav>
-        <ul>
-            <li class="dropdown" title="Refresh this page"><a href="index.html">Francesco Milano</a>
-            <li class="dropdown"><a class="dropbtn" href="projects.html">Projects</a>
-            <div class="dropdown-content">
-                <a href="https://github.com/framilano/SnakePlusPlus">SnakePlusPlus</a>
-                <a href="https://github.com/framilano/Updatium">Updatium</a>
-                <a href="https://github.com/framilano/pcsx2Updater">PCSX2 Updater</a>
-                <a href="https://github.com/framilano/fromCtoF">fromCtoF</a>
-                <a href="https://framilano.github.io/covid19graphs/covid19.html">COVID-19 graphs (Italy)</a>
-                <a href="https://framilano.github.io/downloadcalculator/calculator.html">Download time calculator</a>
-                <a href="https://framilano.github.io/indovinachiME/indovinachiME.html">Guess Who Mario Edition</a>
-                <a href="https://framilano.github.io/nomicosecitta/ncca.html">Nomi, cose e città</a>
-            </div>
-            </li>
-            <li class="dropdown"><a class="dropbtn" href="contact.html">Contact</a>
-            <div class="dropdown-content">
-                <a href="https://www.linkedin.com/in/francesco-milano-365105149/">LinkedIn</a>
-                <a href="https://twitter.com/milano_fra">Twitter</a>
-                <a href="https://www.reddit.com/user/TheKronorium98">Reddit</a>
-            </div>
-            </li>
-        </ul>
-        <button title="Switch dark/light theme" id="btn_theme" onclick="change_theme(document.getElementById('btn_theme'))" class="theme-switcher">🌙</button>
-    </nav>
+    <div w3-include-html="modules/navbar.html"></div>
+
     <div class="page-content">
         You can contact me on these websites whenever you want, I'll answer as soon as I can!
     </div>
@@ -61,3 +39,7 @@
 </body>
 
 </html>
+
+<script>
+    includeHTML();
+</script>
