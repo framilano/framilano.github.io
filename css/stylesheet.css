@@ -62,7 +62,7 @@ a:hover {
 }
 
 .typewriter {
-    animation: blink .75s step-end infinite;
+    animation: blink 1.20s step-end infinite;
     display: inline-block;
     border-right: 10px solid #FFFFFF;
     line-height: normal;
@@ -70,10 +70,10 @@ a:hover {
 
 @keyframes blink {
     from, to { 
-        border-color: transparent 
+        border-color: #FFFFFF; 
     }
     50% { 
-        border-color: #FFFFFF; 
+        border-color: transparent; 
     }
 }
 
