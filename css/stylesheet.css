@@ -1,0 +1,74 @@
+body {
+    font-family: 'Fira Mono', sans-serif;
+    color: #FFFFFF;
+    background-color: #181818;
+    line-height: 2em;
+}
+
+img {
+    padding: 10%;
+    width: 15em;
+    height: 15em;
+}
+
+a {
+    color: #3465A4;
+}
+
+a:visited{
+    color:#3465A4;
+}
+
+a:hover {
+    color: #FFFFFF;
+    background-color: #48B9C7;
+}
+
+.container {
+    margin-top: 12.5vh;
+    background-color: #101010;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 5% 45%;
+}
+
+.box1 {
+    text-align: center;
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+.box2 {
+    text-align: left;
+    padding: 4%;
+    padding-top: 20%;
+    font-size: 200%;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.box3 {
+    text-align: left;
+    padding: 4%;
+    padding-top: 0%;
+    grid-row: 2;
+    grid-column: 2 / 3;
+}
+
+.box4 {
+    text-align: center;
+    padding-left: 5%;
+    grid-row: 3;
+    grid-column: 1 / 3;
+}
+
+.box5 {
+    text-align: center;
+    padding: 5%;
+    grid-row: 4;
+    grid-column: 1 / 3;
+}

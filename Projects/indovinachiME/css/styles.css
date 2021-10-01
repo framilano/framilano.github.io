@@ -1,0 +1,52 @@
+body {
+    background-image: url("../assets/background/mariowall.jpg");
+    font-family: 'Roboto', sans-serif;
+    background-color: #181818;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #c3001d;
+    font-size: 500%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.greyed_out {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+}
+
+img {
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+
+button {
+    padding: 7px;
+    outline: none;
+    border:3px solid white;
+    border-radius: 12px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 2%;
+    font-size: 300%;
+    cursor: pointer;
+    
+}
+
+.rightmiddle {
+    position: absolute;
+    right: 3%;
+    bottom: 20%;
+}
