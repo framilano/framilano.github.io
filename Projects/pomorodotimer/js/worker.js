@@ -5,5 +5,5 @@ onmessage = function(comand) {
         clearInterval(intervalID)
         postMessage()
         return
-    } else intervalID = setInterval(postMessage(""), 1000)
+    } else intervalID = setInterval(() => {postMessage("")}, 1000)
 };
