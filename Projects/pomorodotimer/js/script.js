@@ -67,7 +67,7 @@ function startTimer() {
     } else {
         document.getElementById('startbtn').innerHTML ="PAUSE"
         timer = document.getElementById('timer')
-        worker = new Worker("worker.js")
+        worker = new Worker("js/worker.js")
         worker.postMessage("start")
         worker.onmessage(() => {
             updateTimer()
