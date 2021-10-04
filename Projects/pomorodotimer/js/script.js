@@ -3,7 +3,6 @@ document.getElementById('pomodorobtn').addEventListener("click", spawnPomodoroTi
 document.getElementById('shortbreakbtn').addEventListener("click", spawnShortBreakTimer);
 document.getElementById('startbtn').addEventListener("click", startTimer);
 
-intervalID = 0
 audio = new Audio('assets/alarm.mp3');
 audio1 = new Audio('assets/start.mp3')
 current_timer = "pomodoro"
