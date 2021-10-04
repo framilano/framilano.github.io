@@ -17,7 +17,7 @@ function spawnPomodoroTimer() {
     document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('pomodorobtn').className="selectedbutton"
     document.getElementById('shortbreakbtn').className=""
-    clearWorkerTimer()
+    if (worker != null) clearWorkerTimer()
     current_timer="pomodoro"
     timer = document.getElementById('timer')
     timer.value ="pomodoro"
@@ -28,7 +28,7 @@ function spawnShortBreakTimer() {
     document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('shortbreakbtn').className="selectedbutton"
     document.getElementById('pomodorobtn').className=""
-    clearWorkerTimer()
+    if (worker != null) clearWorkerTimer()
     current_timer = "shortbreak"
     timer = document.getElementById('timer')
     timer.value ="shortbreak"
@@ -37,7 +37,7 @@ function spawnShortBreakTimer() {
 
 function alarm() {
     document.getElementById('startbtn').innerHTML ="START"
-    clearWorkerTimer()
+    if (worker != null) clearWorkerTimer()
     audio.play();
     if (current_timer=="pomodoro") document.getElementById('shortbreakbtn').click()
     else document.getElementById('pomodorobtn').click()
