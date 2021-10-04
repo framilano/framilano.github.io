@@ -8,11 +8,16 @@ audio = new Audio('assets/alarm.mp3');
 audio1 = new Audio('assets/start.mp3')
 current_timer = "pomodoro"
 
+function clearWorkerTimer() {
+    worker.postMessage("clear")
+    worker.onmessage(() => {return})
+}
+
 function spawnPomodoroTimer() {
     document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('pomodorobtn').className="selectedbutton"
     document.getElementById('shortbreakbtn').className=""
-    clearInterval(intervalID)
+    clearWorkerTimer()
     current_timer="pomodoro"
     timer = document.getElementById('timer')
     timer.value ="pomodoro"
@@ -23,7 +28,7 @@ function spawnShortBreakTimer() {
     document.getElementById('startbtn').innerHTML ="START"
     document.getElementById('shortbreakbtn').className="selectedbutton"
     document.getElementById('pomodorobtn').className=""
-    clearInterval(intervalID)
+    clearWorkerTimer()
     current_timer = "shortbreak"
     timer = document.getElementById('timer')
     timer.value ="shortbreak"
@@ -32,7 +37,7 @@ function spawnShortBreakTimer() {
 
 function alarm() {
     document.getElementById('startbtn').innerHTML ="START"
-    clearInterval(intervalID)
+    clearWorkerTimer()
     audio.play();
     if (current_timer=="pomodoro") document.getElementById('shortbreakbtn').click()
     else document.getElementById('pomodorobtn').click()
@@ -57,11 +62,15 @@ function updateTimer() {
 function startTimer() {
     audio1.play()
     if (document.getElementById('startbtn').innerHTML == "PAUSE") {
-        clearInterval(intervalID)
+        clearWorkerTimer()
         document.getElementById('startbtn').innerHTML ="RESUME"
     } else {
         document.getElementById('startbtn').innerHTML ="PAUSE"
         timer = document.getElementById('timer')
-        intervalID = setInterval(updateTimer, 1000)
+        worker = new Worker("worker.js")
+        worker.postMessage("start")
+        worker.onmessage(() => {
+            updateTimer()
+        });
     }
 }
