@@ -86,11 +86,9 @@ button {
 }
 
 @media screen and (max-width: 730px) {
-
     #description {
         font-size: 2.3em;
     }
-
 
     #content {
         width: auto;
