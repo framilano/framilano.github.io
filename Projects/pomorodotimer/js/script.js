@@ -10,7 +10,7 @@ worker = null
 
 function clearWorkerTimer() {
     worker.postMessage("clear")
-    worker.onmessage = function() {return}
+    worker.onmessage = function(e) {return}
 }
 
 function spawnPomodoroTimer() {
@@ -69,7 +69,7 @@ function startTimer() {
         timer = document.getElementById('timer')
         worker = new Worker("js/worker.js")
         worker.postMessage("start")
-        worker.onmessage = function() {
+        worker.onmessage = function(e) {
             updateTimer()
         };
     }
