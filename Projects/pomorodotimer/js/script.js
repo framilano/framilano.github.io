@@ -7,6 +7,7 @@ intervalID = 0
 audio = new Audio('assets/alarm.mp3');
 audio1 = new Audio('assets/start.mp3')
 current_timer = "pomodoro"
+worker = null
 
 function clearWorkerTimer() {
     worker.postMessage("clear")
