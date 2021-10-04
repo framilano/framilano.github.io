@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #191919;
     color: #ba000d;
+    min-width: 700px;
 }
 
 
