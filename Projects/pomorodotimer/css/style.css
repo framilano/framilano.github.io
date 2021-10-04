@@ -6,6 +6,7 @@ body {
 
 
 #title {
+    text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
     font-size: 4em;
@@ -13,6 +14,7 @@ body {
 }
 
 #description {
+    text-align: center;
     margin-top: 0%;
     font-size: 3em;
 }
@@ -84,11 +86,16 @@ button {
 }
 
 @media screen and (max-width: 730px) {
+
+    #description {
+        font-size: 2.3em;
+    }
+
+
     #content {
         width: auto;
         grid-template-columns: 100%;
     }
-    
     
     #pomodorobtn{
         grid-row: 1;
