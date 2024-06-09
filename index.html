@@ -7,74 +7,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="assets/favicon.ico" />
     <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Francesco Milano</title>
+    <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+    <title>framilano</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="box1"><img src="assets/image.png"></div>
-        <div class="box2">Francesco Milano</div>
-        <div class="box3">
-            <div class="typewriter"></div>
+        
+        <div class="box1">
+            <div style="color: #16c60c;display: inline;">framilano@website</div>:<div
+                style="color: #3b78ff;display: inline;">~</div><div class="typewriter">$</div>
         </div>
-        <div class="box4">
+        
+        <div class="box2">
+            <a href="#" id="programmerButton">programmer stuff</a><br>
+            <a href="#" id="artistButton">artistic stuff</a><br>
+        </div>
+        
+        <div class="box3" hidden = 1>
+            <section id="slider1" class="splide" aria-label="programmer stuff">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <h2>What I am doing currently</h2>
+                            • Working with Infocert SpA as a Cloud Developer using AWS.<br><br>
+                            • PICO-8 game development! Super fun.<br><br>
+                            • Studying and learning mapping with <ahref="https://trenchbroom.github.io/">TrenchBroom</a> for Quake-engine based games 🎮<br><br>
+                            • Working with Quarkus Mutiny, refactoring old projects into serveless and microservices-oriented environments with it!<br><br>
+                        </li>
+                        <li class="splide__slide">
+                            <h3>Academic and Work Experience</h3>
+                            • Bachelor's Degree in CS at <a href="https://www.unimi.it/en">University of Milan</a>.<br><br>
+                            • Developed an <a href="https://github.com/framilano/TesiTriennaleMilano">offline dialogue management
+                                framework</a> on ROS for my Bachelor's thesis.<br><br>
+                            • Worked and studied with AWS services like Lambda, EC2, AppSync, Stacks, DDB and StepFunctions.<br><br>
+                            • Worked with Spring Authorization Server framework workflows<br><br>
+                            • Worked with Quarkus, migrating legacy services to Kubernetes-powered ⎈ environments!
+                        </li>
+                        <li class="splide__slide">
+                            <h3>Bots</h3>
+                            • Developed and published a music bot for Discord, with queue, playlists, loop and audio filters support!
+                            <br><br>
+                            • I created a <a href="https://t.me/covid19graphs">Telegram bot</a> that shares COVID-19 data every day (now
+                            only on fridays) since May 2020.<br><br>
+                        </li>
+                        <li class="splide__slide">
+                            <h3>Games</h3>
+                            • Developed a game called <a href="https://github.com/framilano/DodgerDemake">Dodger Demake</a> for
+                            PICO-8.<br><br>
+                            • Developed and published a zombie map for the NZP project, called <a
+                                href="https://github.com/nzp-team/nzportable/discussions/674">Groesten Haus Deimagined</a><br><br>
+                            • Studying game development using the fantasy console <a
+                                href="https://www.lexaloffle.com/pico-8.php">PICO-8</a>!<br><br>
+                            • Learning GSC scripting using BO3 Mod tool, published a mod on Steam Workshop called <a
+                                href="https://steamcommunity.com/sharedfiles/filedetails/?id=3021782868">Little Brother Mod!</a> to help
+                            people not used to FPS games.<br><br>
+                            • I wrote a Unity/C# implementation of 1010 with rotated tetrominoes called <a
+                                href="https://github.com/framilano/TenTen">TenTen</a><br><br>
+                            • I wrote a C++ implementation of <a href="https://github.com/framilano/SnakePlusPlus">Snake</a><br><br>
+                            • I <a href="https://github.com/framilano/PlutoniumLinuxHosting">forked</a> T5/T6 Server support on Linux
+                            for <a href="https://plutonium.pw/">Plutonium</a> to support T4/WaW<br><br>
+                            • In the same fashion I eventually wrote a <a
+                                href="https://github.com/framilano/BlackOps3ServerInstaller">T7 server installer</a> for Linux too<br><br>
+                        </li>
+                        <li class="splide__slide">
+                            <h3>Generic Utilities</h3>
+                            • I wrote a <a href="https://github.com/framilano/EC2Trigger-Lambda">Lambda AWS trigger</a> for EC2
+                            instances, useful to start/stop EC2 from an external endpoint like a Discord bot.<br><br>
+                            • A <a href="https://github.com/framilano/Terminal-Colored-Print">Python3 library</a> to color and format
+                            your strings.<br><br>
+                        </li>
+                        <li class="splide__slide">
+                            <h3>JS/FE Web Stuff (not really my thing tbh)</h3>
+                            • I developed a <a href="https://addons.mozilla.org/it/firefox/addon/crunchyrollspoilerstopper/">Firefox
+                                estension</a> for Crunchyroll, stopping the site from spoilering thumbnails and titles!<br><br>
+                            • Deployed a NodeJS <a href="https://github.com/framilano/LiveWeather">Weather-AQI</a> site on Render and
+                            created a few JS projects and games:
+                                <a href="Projects/downloadcalculator/calculator.html">DTC</a>
+                                <a href="Projects/indovinachiME/indovinachiME.html">GuessWHO</a>
+                                <a href="Projects/nomicosecitta/ncca.html">NomiCoseCittà</a>
+                                <a href="Projects/pomorodotimer/pomorodotimer.html">PomorodoTimer</a>
+                                <a href="Projects/ps3gameupdater/index.html">PS3UpdateParser</a><br><br>
+                        </li>
+                        <li class="splide__slide">
+                            <h3>Bonus Content</h3>
+                            • My Advent of Code <a href="https://github.com/framilano/AdventOfCode2023">repo</a>!
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <div class="box4" hidden=1>
+            <section id="slider2" class="splide" aria-label="programmer stuff">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <h1>End Of World Rave Volume I</h1>
+                            <video width="320" height="320" controls><source src="assets/drawings/kokaine.mp4" type="video/mp4"></video>
+                            <video width="320" height="320" controls><source src="assets/drawings/alkohol.mp4" type="video/mp4"></video> 
+                            <video width="320" height="320" controls><source src="assets/drawings/L$D.mp4" type="video/mp4"></video> 
+                        </li>
+                        <li class="splide__slide">
+                            <h1>End Of World Rave Volume II</h1>
+                            <video width="320" height="320" controls><source src="assets/drawings/ketamine.mp4" type="video/mp4"></video>
+                            <video width="320" height="320" controls><source src="assets/drawings/ekstacy.mp4" type="video/mp4"></video> 
+                        </li>
+                        <li class="splide__slide">
+                            <h1>idk</h1>
+                            <video width="320" height="320" controls><source src="assets/drawings/honk.mp4" type="video/mp4"></video>
+                            <video width="320" height="320" controls><source src="assets/drawings/lamb.mp4" type="video/mp4"></video> 
+                            <video width="320" height="320" controls><source src="assets/drawings/fear.mp4" type="video/mp4"></video> 
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <div class="box5">
             <a href="https://www.linkedin.com/in/francesco-milano-0a378a232/" target="_blank">Linkedin</a>
             <a href="https://github.com/framilano" target="_blank">Github</a>
             <a href="mailto:milano.francesco@protonmail.com" target="_blank">Mail</a>
-            <a href="https://www.dropbox.com/s/2l93yiunw93ni29/curriculum_vitae.pdf?dl=0">CV</a><br>
-        </div>
-        <div class="box5">
-            <h2>What I am doing currently</h2>
-            • PICO-8 game development!<br>
-            • Studying and learning mapping with <a href="https://trenchbroom.github.io/">TrenchBroom</a> for Quake-engine based games 🎮<br>
-            • Working with Quarkus Mutiny, refactoring old projects into serveless and microservices-oriented environments with it!<br>
-            <hr class="solid"><br>
-
-            <h3>Academic and Work Experience</h3>
-            • Bachelor's Degree in CS at <a href="https://www.unimi.it/en">University of Milan</a>.<br>
-            • Developed an <a href="https://github.com/framilano/TesiTriennaleMilano">offline dialogue management framework</a> on ROS for my Bachelor's thesis.<br>
-            • Worked and studied with AWS services like Lambda, EC2, AppSync, Stacks, DDB and StepFunctions.<br>
-            • Worked with Spring Authorization Server framework workflows<br>
-            • Worked with Quarkus, migrating legacy services to Kubernetes-powered ⎈ environments!
-            <hr class="solid"><br>
-            
-            <h3>Bots</h3>
-            • Developed and published a music bot for Discord, with queue, playlists, loop and audio filters support! <br>
-            • I created a <a href="https://t.me/covid19graphs">Telegram bot</a> that shares COVID-19 data every day (now only on fridays) since May 2020.<br>
-            <hr class="solid"><br>
-            
-            <h3>Games</h3>
-            • Developed a game called <a href="https://github.com/framilano/DodgerDemake">Dodger Demake</a> for PICO-8.<br>
-            • Developed and published a zombie map for the NZP project, called <a href="https://github.com/nzp-team/nzportable/discussions/674">Groesten Haus Deimagined</a><br>
-            • Studying game development using the fantasy console <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a>!<br>
-            • Learning GSC scripting using BO3 Mod tool, published a mod on Steam Workshop called <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3021782868">Little Brother Mod!</a> to help people not used to FPS games.<br>
-            • I wrote a Unity/C# implementation of 1010 with rotated tetrominoes called <a href="https://github.com/framilano/TenTen">TenTen</a><br>
-            • I wrote a C++ implementation of <a href="https://github.com/framilano/SnakePlusPlus">Snake</a><br>
-            • I <a href="https://github.com/framilano/PlutoniumLinuxHosting">forked</a> T5/T6 Server support on Linux for <a href="https://plutonium.pw/">Plutonium</a> to support T4/WaW<br>
-            • In the same fashion I eventually wrote a <a href="https://github.com/framilano/BlackOps3ServerInstaller">T7 server installer</a> for Linux too<br>
-            <hr class="solid"><br>
-            
-            <h3>Generic Utilities</h3>
-            • I wrote a <a href="https://github.com/framilano/EC2Trigger-Lambda">Lambda AWS trigger</a> for EC2 instances, useful to start/stop EC2 from an external endpoint like a Discord bot.<br>
-            • A <a href="https://github.com/framilano/Terminal-Colored-Print">Python3 library</a> to color and format your strings.<br>
-            <hr class="solid"><br>
-            
-            <h3>JS/FE Web Stuff (not really my thing tbh)</h3>
-            • I developed a <a href="https://addons.mozilla.org/it/firefox/addon/crunchyrollspoilerstopper/">Firefox estension</a> for Crunchyroll, stopping the site from spoilering thumbnails and titles!<br>
-            • Deployed a NodeJS <a href="https://github.com/framilano/LiveWeather">Weather-AQI</a> site on Render and created a few JS projects and games:<br>
-            <div style="text-align: left;">[ <a href="Projects/downloadcalculator/calculator.html">DTC</a> 
-                | <a href="Projects/indovinachiME/indovinachiME.html">GuessWHO</a>
-                | <a href="Projects/nomicosecitta/ncca.html">NomiCoseCittà</a> 
-                | <a href="Projects/pomorodotimer/pomorodotimer.html">PomorodoTimer</a>
-                | <a href="Projects/ps3gameupdater/index.html">PS3UpdateParser</a> ]
-            </div>
-            <hr class="solid"><br>
-
-            <h3>Bonus Content</h3>
-            • My Advent of Code <a href="https://github.com/framilano/AdventOfCode2023">repo</a>!
+            <a href="https://www.dropbox.com/s/2l93yiunw93ni29/curriculum_vitae.pdf?dl=0">CV</a>
         </div>
     </div>
     </div>
@@ -82,5 +139,6 @@
 
 </html>
 
+<script src="js/typewriter.js"></script>
 <script src="js/script.js"></script>
-<script>typewrite()</script>
+<script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
