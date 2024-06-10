@@ -5,13 +5,6 @@ body {
     line-height: 1.8em;
 }
 
-img {
-    width: 15em;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
 a {
     color: #3465A4;
 }
