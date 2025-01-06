@@ -8,7 +8,8 @@ body {
 }
 
 .contact {
-    margin-right: 5%;
+    margin-right: 2%;
+    text-align: left;
 }
 
 hr {
@@ -22,4 +23,11 @@ a:visited {
 
 a {
     color: #3391ff;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {  
+    body {
+        font-size: x-large;
+    }
 }
