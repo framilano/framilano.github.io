@@ -1,1 +1,1 @@
-Personal projects web site 
+Personal projects web site 🌐
