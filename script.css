@@ -1,6 +1,10 @@
 body {
     background-color: #181a1b;
-    color: #FFFFFF
+    color: #FFFFFF;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
 }
 
 .list {
@@ -23,11 +27,4 @@ a:visited {
 
 a {
     color: #3391ff;
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {  
-    body {
-        font-size: x-large;
-    }
 }
